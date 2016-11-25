@@ -16,13 +16,33 @@
       <div class="#">
       密码：<input name="password" type="password" placeholder="请输入密码" />
       </div>
-      <div class="abc">
-      <input type="submit" value="提交"/>
+      <div class="#">
+        去向：<input name="target" type=checkbox value="male" /> 男
+              <input name="target" type=checkbox value="female" /> 女
       </div>
+
       <div class="#">
       性别：<input type="radio" name="sex" value="male" /> 男
             <input type="radio" name="sex" value="female" /> 女
-            </div>
+          </div>
+          <div class="#">
+            <input name="comment" type="hidden" value="delete.php">
+          </div>
+          <div class="#">
+            其他:
+            <textarea name="comment" maxlength="80" placeholder="请输入..."></textarea>
+          </div>
+        <div>
+          信息来源：
+          <select name="imform source">
+            <option value="web" selected>网站</option>
+            <option value="advice">他人推荐</option>
+            <option value="find by myself">自我发现</option>
+            <option value="others">其他</option>
+        </div>
+          <div class="abc">
+          <input type="submit" value="提交"/>
+          </div>
     </form>
   </body>
 </html>
