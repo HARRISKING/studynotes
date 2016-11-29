@@ -1,0 +1,12 @@
+.a1{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.a2{
+  height: 40px;
+  background: blue;
+}
+html{
+  background: #ccc;
+}
