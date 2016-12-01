@@ -1,0 +1,40 @@
+.all{
+  border: 1px solid;
+  width: 800px;
+  height: 800px;
+}
+.all .box:nth-child(2){
+float: left;
+clear:right;
+border: 1px solid;
+background: red;
+width: 100px;
+height: 100px;
+
+}
+.all .box:nth-child(3){
+  float: right;
+      /*clear: right;*/
+  border: 1px solid;
+  background: green;
+  width: 100px;
+  height: 100px;
+
+}
+.all .box:nth-child(4){
+  float: right;
+  clear:both;
+  border: 1px solid;
+  background: blue;
+  width: 100px;
+  height: 100px;
+
+}
+.all .ga:nth-child(1){
+  float: right;
+  border: 1px solid;
+  background: yellow;
+  width: 100px;
+  height: 100px;
+
+}
