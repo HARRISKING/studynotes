@@ -1,0 +1,69 @@
+// styling to center the modal
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+// modal fades in when button
+// is in focus (i.e. clicked on)
+button:focus + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+// Additional Styling
+
+body {
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+button {
+  flex: 1;
+  background-color: #c69;
+  border: none;
+  padding: 1.5em;
+  max-width: 30%;
+  color: white;
+  transition-duration: .25s;
+
+  &:hover {
+    background-color: darken(#c69, 20%)
+  }
+}
+
+span {
+  position: absolute;
+  top: .2em;
+  right: .5em;
+  font-size: 1.5em;
+  cursor: pointer;
+
+  &:hover {
+    color: #c69
+  }
+}
+
+.modal {
+  flex: 1;
+  background: wheat;
+  border: 1px solid #c69;
+  border-radius: 3px;
+  height: 120px;
+  max-width: 50%;
+
+  p {
+    font-size: 1.5em
+  }
+}

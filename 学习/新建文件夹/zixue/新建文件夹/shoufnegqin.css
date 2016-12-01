@@ -1,0 +1,20 @@
+a{
+  display: block;
+  background: green;
+  color: white;
+  text-decoration: none;
+  padding: .2em 1em;
+  border-bottom: 1px solid #ddd;
+}
+
+div{
+  box-sizing: border-box;
+  background: #ddd;
+  height: 0;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+div:target{
+  height: 400px;
+}
