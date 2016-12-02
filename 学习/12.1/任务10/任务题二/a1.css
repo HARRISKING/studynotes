@@ -43,3 +43,14 @@
   border-right: 1px transparent;
   background: #fff;
 }
+.haha :after{
+  border: 1px solid;
+  background-color: red;
+  content: "  fdf";  
+    display: block;
+
+
+}
+.b1{
+
+}
