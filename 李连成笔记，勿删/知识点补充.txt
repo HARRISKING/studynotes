@@ -1,0 +1,41 @@
+1，display:imline-block会出现缝隙问题
+方法一：
+去掉出现缝隙元素前端的间隔。
+也可以这样写：
+方法二：负margin。但是会导致第一个出框，因此要单独设置其margin。first-of-child：margin-left=0
+
+方法三：浮动。但是边框会变线（里面默认没有了内容）这时使用清除浮动overfloat：auto。父容器无法包裹浮动元素采用。
+方法四：（最简单）给边框设置font-size：0；然后因为文本本身设置了font-size因为不受影响。（经验）
+
+2,display:inline-blockIE8以上才被兼容，因此为了兼容考虑，会在其下面加上*display:inline；*在IE6、7上有一个bug,会自动忽略*存在，这样在普通浏览器上带星号的不会被识别，在IE 6、7上就会被识别。但是，*号部分必须放在后面（这部分被称为css hack）。
+
+3,字符串元素内空格无论加多少都只被渲染成一个，如果需要超过一个的空格，可以加 &nbsp(有几个代表几个)。
+
+
+4，pre标签。保留原始排版
+
+5，>选择直接子元素
+
+6，bfc独立时空
+
+7，父容器无法包裹浮动元素解决办法：
+
+a，bfc方式：display：inline-block；overflow:auto；overflow:hidden；
+
+b，再建一个元素，给其加clear:both。这样虽然父容器无法识别浮动元素，但是新建元素因为清除浮动所以可以被识别，进而撑开了父容器。
+
+c，使用伪类:after。这是父容器高度完全有content决定，这是display:inline-block+clear:both，就可以撑开父元素。tip:一般这样使用只有ie8以上才可以，这是加*overflow：auto。（作用同2）
+
+8，zoom:1；放大页面
+.clear 视频31:21处
+
+9，overflow:hidden在设置好宽高之后，超过宽高的内容将被隐藏。
+overflow：auto:有无滚动条由浏览器决定。
+
+10，之前百度下面的线不会搞，现在用这个
+border-bottom：1px solid;
+
+11，min-height最小高度；max-height最大高度。
+
+12，负margin
+
