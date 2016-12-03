@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      *{
+        margin: 0;
+        paddding:0;
+      }
+      #header,#footer{
+        height: 40px;
+        background: yellow;
+      }
+      #content .aside{
+        width: 200px;
+        background: red;
+        float: left;
+        color: white;
+        min-height: 500px;
+      }
+      #content .main{
+        background: blue;
+        color: white;
+        overflow: auto;
+        /*设置BFC，将main与aside分开*/
+        min-height: 500px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <div class="a1">
+      </div>
+    </div>
+    <div id="content">
+      <div class="aside">我是侧边栏
+      </div>
+      <div class="main">我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区我是展示区
+      </div>
+    </div>
+    <div id="footer">
+      <div class="a2">
+      </div>
+    </div>
+  </body>
+</html>

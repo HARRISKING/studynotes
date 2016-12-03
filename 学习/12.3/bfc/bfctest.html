@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .a1 .box{
+      border: 1px solid;
+      width:80px;
+      height: 80px;
+      background: red;
+      margin: 20px;
+    }
+    .a2 .box{
+      border: 1px solid;
+      width:80px;
+      height: 80px;
+      background: red;
+      margin: 20px;
+      /*display: inline-block;*/
+      float: left;
+
+    }
+    .a2{
+      border: 2px solid;
+      overflow: auto;
+      /*display: inline-block;*/
+    }
+    .a3>img{
+      height: 100px;
+      float: left;
+    }
+    .a3>p{
+      /*overflow: auto;*/
+      /*让文字不围绕图片而是在其后的两种方法，更推荐overflow: auto;形成了BFC。*/
+      margin-left: 100px;
+
+    }
+    .a3{
+      border: 1px solid;
+    }
+    /*.a1>div{
+      overflow: auto;
+    }*/
+    /*不让margin重叠方法。*/
+    </style>
+  </head>
+  <body>
+    <div class="a1">
+      <div>
+      <div class="box">1</div>
+    </div>
+    <div>
+      <div class="box">2</div>
+    </div>
+    <div>
+      <div class="box">3</div>
+    </div>
+
+    <div class="a2">
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+
+    </div>
+    <div class="a3">
+      <img src="http://upload.jianshu.io/collections/images/47/%E9%A6%96%E9%A1%B5%E6%8A%95%E7%A8%BF.png" alt="">
+      <p>电话费决定是否收到度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡电话费决定是否收到尽快发货速度加咖啡</p>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+/**{
+  box-sizing: border-box;
+}*/
+.header1 li{
+  display: inline-block;
+  list-style: none;
+  font-size: 10px;
+  margin: 0 7px;
+  color: #333;
+
+}
+html li p ul{
+  margin: 0;
+  padding: 0;
+}
+.header2 li{
+  display:inline-block;
+  list-style: none;
+  font-size: 10px;
+  margin: 0 7px;
+  color: #333;
+  font-weight: bold;
+}
+.header2{
+  float: right;
+}
+.header1{
+    float: left;
+}
+.xiala{
+  display: none;
+}
+li :hover .xiala{
+  display: block;
+}
+#content{
+  clear: both;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+
+
+}
+.con1{
+  background: url(https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png)0 0 no-repeat;
+  width: 250px;
+  background-size: contain;
+  height: 130px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -40px;
+
+}
+.con2{
+
+}
+.kuang{
+  width: 30px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+
+}
+.button{
+  width: 30px;
+  height: 30px;
+  background-color: rgb(49, 126, 243);
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;*/
+}
+#foot{
+border: 1px solid;
+width: 800px;
+
+position: absolute;
+bottom: 0px;
+right: 0px;
+}

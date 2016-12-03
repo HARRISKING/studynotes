@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+      .a1 .box{
+        border: 1px solid;
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 20px;
+      }
+      .a2 .box{
+        border: 1px solid;
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 20px;
+      }
+      .a2> div{
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a1">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <div class="a2">
+      <div>
+        <div class="box">4</div>
+      </div>
+      <div>
+        <div class="box">5</div>
+      </div>
+      <div>
+        <div class="box">6</div>
+      </div>
+    </div>
+  </body>
+</html>
