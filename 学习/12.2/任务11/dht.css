@@ -1,0 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+#header>.zong {
+  list-style: none;
+
+
+}
+#header .qd1,.fwq1,.qdgj1{
+  display: none;
+  list-style: none;
+}
+.zong> li{
+  float: left;
+  margin-left: 20px;
+  background: #ccc;
+
+}
+#header{
+  background: #ccc;
+  width: 800px;
+  height: 20px;
+}
+#header :hover .qd1,.fwq1,.qdgj1{
+  display: block;
+}
