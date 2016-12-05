@@ -8,13 +8,14 @@
   background: red;
   font-size: 20px;
   float: left;
-  border-bottom: 10px solid;
 
 
 
 }
 .a1{
   border: 1px solid;
+  border-bottom: 10px solid;
+
 }
 .a1:after{
   display: block;
