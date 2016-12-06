@@ -1,0 +1,39 @@
+1，浏览器兼容问题
+
+兼容性要分等级，不然浪费时间。
+
+2，测试IE的方法
+
+ 1，虚拟机。
+ 2，远程虚拟机。
+ 3，IE tester（不靠谱）。
+ 4，某些IE可以开启浏览器模式。
+
+3，在IE6、7上的兼容性问题及解决办法
+
+ 1，display：inline-block
+
+    使用{*display：inline；zoom=1}代替。
+    解释：*只有IE浏览器会默认生效，其他浏览器不支持，视之为废码，加上*可以只让IE6、7识别。
+	  zoom=1只有IE浏览器支持，可以触发IE浏览器的BFC(haslayout)。
+ 2，hover
+    使用a标签使用。<a href=javascript:;>。
+    解释：href如果使用#会使页面跳转，JavaScript：；是伪代码，加上它页面在点击时不会跳转。
+
+3，搜的方法
+
+ie问题 最后加bug
+
+4，html注释写法
+<!--这是注释-->
+
+5,cc
+ie的注释可以被识别（html）
+<!--[if IE 7]> 我是注释 <![endif]-->
+所以如果想给ie浏览器设置兼容，可以这样：
+<!--[if IE 7]> <link href="ie7.css"> <![endif]-->这样相当于给ie专门设了一个css。
+
+6，outline：1px solid与border相比的好处就在于不占用宽度。调试常用方法。
+
+7，在地址栏内操作。（调试用）
+javascript：
