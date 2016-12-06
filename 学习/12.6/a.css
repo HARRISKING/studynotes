@@ -1,0 +1,29 @@
+.a1:before{
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 1px;
+  border-top: 100px solid transparent;
+  border-left: 100px solid transparent;
+  border-bottom: 100px solid #333;
+  border-right: 100px solid transparent;
+
+}
+.a1:after{
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 2px;
+  border-top: 100px solid transparent;
+  border-left: 100px solid transparent;
+  border-bottom: 100px solid white;
+  border-right: 100px solid transparent;
+
+}
+
+.a5{
+position: absolute;
+left: 500px;
+}
