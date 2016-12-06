@@ -1,0 +1,36 @@
+#zong{
+  width: 800px;
+  border: 1px solid;
+  margin: 0 auto;
+}
+#zong:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+.a1{
+  width: 100%;
+  height: 300px;
+  background: red;
+  float: left;
+}
+.b{
+  width: 400px;
+  margin: 0 auto;
+  background: black;
+  height: 300px;
+}
+.a2{
+  width: 200px;
+  height: 200px;
+  background: blue;
+  float: left;
+  margin-left: -100%;
+}
+.a3{
+  width: 200px;
+  height: 200px;
+  background: yellow;
+  float: left;
+  margin-left: -200px;
+}

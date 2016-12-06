@@ -1,0 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.a1> li{
+  display: inline-block;
+  list-style: none;
+  background: red;
+  font-size: 20px;
+  float: left;
+
+
+
+}
+.a1{
+  border: 1px solid;
+  border-bottom: 10px solid;
+
+}
+.a1:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+.a1{
+  *zoom:1;
+}

@@ -1,0 +1,35 @@
+#big{
+  border: 1px solid;
+  width:800px;
+  margin: 0 auto;
+  padding: 0 200px;/*overflow:auto;这时超出部分会被隐藏。只能使用伪类的方法来撑开父容器。*/
+}
+#big:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.body{
+  width: 100%;
+  height: 600px;
+  background: red;
+  float: left;
+}
+.aside{
+  position: relative;
+  left: -200px;
+  width: 200px;
+  height: 200px;
+  background: blue;
+  float: left;
+  margin-left: -100%;/*这里有一个重要特性：当两个元素同方向浮动，下面的元素负margin设为自身宽度（所有宽度，包括边框）时，会跳转到上一个浮动元素上面，上面元素不会感知下一个元素的存在，下一个元素会覆盖上一个元素。*/
+}
+.extra{
+  position: relative;
+  left: 200px;
+  width: 200px;
+  height: 200px;
+  background: pink;
+  float: left;
+  margin-left: -200px;
+}
