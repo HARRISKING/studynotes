@@ -1,0 +1,13 @@
+1，负margin
+
+a，margin是给元素加外边距，即某个方向margin越大，越往相反方向移动。同理，当某个方向的margin为负数，则元素会向该方向移动。这一条针对的是margin-left和margin-top，margin-bottom和margin-right相反。http://www.hicss.net/i-know-you-do-not-know-the-negative-margin/
+
+b，margin会影响整个文档流，当然负margin也会。
+
+c，这里有一个重要特性：当两个元素同方向浮动，下面的元素负margin设为自身宽度（所有宽度，包括边框）时，会跳转到上一个浮动元素上面，上面元素不会感知下一个元素的存在，下一个元素会覆盖上一个元素。如果margin：-100%，负margin大于自身宽度，自己去试。
+ 
+2,opacity设置透明度。
+
+3，浮动元素不设宽度不占宽度。
+
+4，圣杯布局两种方法可以实现。
