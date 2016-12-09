@@ -1,0 +1,9 @@
+.header{
+  background: red;
+  /*text-align: center;*/
+}
+.a1{
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid black ;

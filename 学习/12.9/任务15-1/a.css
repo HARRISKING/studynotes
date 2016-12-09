@@ -1,0 +1,143 @@
+html,body{
+  padding: 0;
+  margin: 0;
+}
+#menu img{
+  width: 30px;
+  height: 30px;
+}
+#menu .xiala >li{
+  list-style: none;
+  float: left;
+  margin-left: 20px;
+  border: 1px solid;
+}
+#menu .xiala a{
+  float: left;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #333;
+}
+#menu .xiala a:hover{
+color: #ccc;
+}
+#menu .hid{
+display: none;
+}
+#menu> .more:hover .hid{
+  display: block;
+}
+#menu .xiala{
+  position: relative;
+}
+#menu .xiala:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+#header{
+  background: #45a6f3;
+  color: white;
+}
+#header .kuang1{
+  width: 960px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+#header p{
+  font-size: 13px;
+  margin-top: -7px;
+}
+
+#bar{
+  width: 960px;
+  margin: 40px auto;
+  padding: 15px 0;
+  font-size: 13px;
+  background: #ccc;
+}
+#bar a{
+  color: #45a6f3;
+  margin-left: 10px;
+}
+#main img{
+  width: 271px;
+  height: 150px;
+}
+#main .a2{
+  width: 960px;
+  margin: 0 auto;
+}
+#main .pic{
+  margin-left: -111px;
+}
+#main .pic:after{
+  content: " ";
+  display: block;
+  clear: both;
+}
+/*放在后面要用after*/
+
+#main .pic li{
+  list-style: none;
+  float: left;
+  margin-left:70px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+#main .kuang2{
+  text-align: center;
+}
+#main .kuang2 a{
+  text-decoration: none;
+  height: 25px;
+  line-height: 25px;
+  width: 53px;
+  border: 1px solid #ccc;
+  color: #333;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+#main .kuang2 a:hover{
+color: #ccc;
+}
+#footer{
+  background: #45a6f3;
+  padding: 20px 0;
+  margin: 40px 0;
+}
+.kuang4{
+  width: 960px;
+  margin: 0 auto;
+}
+#footer li{
+  list-style: none;
+  text-align: center;
+}
+#footer a{
+width: 45px;
+height: 25px;
+border: 1px solid #ccc;
+color: #ccc;
+display: inline-block;
+border-radius: 4px;
+line-height: 25px;
+text-decoration: none;
+}
+#footer li p{
+  font-size: 10px;
+  margin-top: -13px;
+}
+#words{
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  width: 960px;
+  margin: 0 auto;
+}
+#words p{
+  text-align: center;
+  font-size: 10px;
+  margin-top: 40px;
+  color: #555;
+}
