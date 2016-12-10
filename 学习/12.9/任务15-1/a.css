@@ -1,30 +1,68 @@
-html,body{
+html,body,ul,li,a,p{
   padding: 0;
   margin: 0;
 }
 #menu img{
-  width: 30px;
+  width: 35px;
   height: 30px;
+  position: relative;
+  top: 6px;
+  left: 0px;
+}
+#menu{
+  width: 960px;
+  margin: 0 auto;
 }
 #menu .xiala >li{
   list-style: none;
   float: left;
   margin-left: 20px;
-  border: 1px solid;
+  height: 20px;
+  line-height: 20px;
+  padding: 10px 0;
 }
 #menu .xiala a{
   float: left;
   text-decoration: none;
-  margin-left: 20px;
   color: #333;
+}
+.box{
+  width: 0;
+  height: 0;
+  border-top: 5px solid black;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  position: absolute;
+  top: 18px;
+  left: 244px;
+}
+.box:hover{
+  border-top: 5px solid #ccc;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+
 }
 #menu .xiala a:hover{
 color: #ccc;
 }
-#menu .hid{
+.xiala .hid{
 display: none;
+position: absolute;
+top: 39px;
+left: 195px;
+background: white;
+list-style: none;
+padding-left: 0px;
+text-align: center;
+border: 1px solid #ccc;
 }
-#menu> .more:hover .hid{
+.xiala .hid li{
+  padding: 0 10px;
+  border-bottom: 1px dotted;
+}
+.xiala li:hover .hid{
   display: block;
 }
 #menu .xiala{
@@ -46,10 +84,10 @@ display: none;
 }
 #header p{
   font-size: 13px;
-  margin-top: -7px;
 }
-
-#bar{
+#header h2{
+  margin: 12px 0;
+}#bar{
   width: 960px;
   margin: 40px auto;
   padding: 15px 0;
@@ -69,7 +107,7 @@ display: none;
   margin: 0 auto;
 }
 #main .pic{
-  margin-left: -111px;
+  margin-left: -70px;
 }
 #main .pic:after{
   content: " ";
@@ -114,6 +152,7 @@ color: #ccc;
 #footer li{
   list-style: none;
   text-align: center;
+  margin-top: 20px;
 }
 #footer a{
 width: 45px;

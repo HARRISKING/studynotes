@@ -1,0 +1,166 @@
+html,body,li,ul,a{
+  padding: 0;
+  margin: 0;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+#header{
+  background: #222;
+}
+#header .kuang0{
+  width: 960px;
+  margin: 0 auto;
+}
+#header img{
+  width: 70px;
+  height: 66px;
+  position: absolute;
+  z-index: 10;
+}
+.kuang0:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+#header li{
+  float: right;
+  list-style: none;
+}
+#header a{
+  color: white;
+  text-decoration: none;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 20px;
+}
+#first .kuang1{
+  width: 960px;
+  margin: 0 auto;
+}
+#first{
+  background: url(1.jpg) 0 0 no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.kuang1{
+  text-align: center;
+  position: relative;
+  top:662px;
+
+}
+.kuang1 h1{
+  color: red;
+  font-size: 50px;
+  font-weight: bold;
+}
+.kuang1 a{
+  text-decoration: none;
+  color: white;
+  width:90px;
+  height: 35px;
+  border-radius: 6px;
+  background: red;
+  display: inline-block;
+  line-height: 35px;
+}
+.kuang1 a:hover{
+  background-color:#ef4848;
+}
+#second{
+  background: #ccc;
+
+}
+.kuang2{
+  width: 960px;
+  margin: 130px auto;
+  text-align: center;
+}
+.box1:after{
+  clear: both;
+  display: block;
+  content: "";
+}
+.box1 img{
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 15px solid white;
+
+}
+.box1 li{
+  list-style: none;
+  float: left;
+  width: 300px;
+  margin: 0 9px;
+}
+.kuang3{
+  width: 960px;
+  margin: auto;
+  text-align: center;
+}
+.kuang3:after{
+  clear: both;
+  display: block;
+  content: "";
+}
+.box2 li{
+  float: left;
+  width: 300px;
+  display: inline-block;
+  list-style: none;
+  margin: 0 9px;
+
+}
+.box2 img{
+  border: 15px solid #ccc;
+  width:240px;
+  height: 240px;
+  border-radius: 50%;
+}
+#forth{
+  background: #ccc;
+  padding-bottom: 150px;
+}
+.kuang4{
+  width: 960px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.box3 li{
+  list-style: none;
+  float: left;
+  margin: 0 5px;
+  background: white;
+  margin-top: 10px;
+}
+.box3:after{
+content: " ";
+display: block;
+clear: both;
+}
+.box3 img{
+  width: 311px;
+  height: 300px;
+}
+.box3 {
+  margin-left: -3px;
+}
+.kuang4 h1{
+padding-top: 115px;
+}
+.box4 img{
+  width: 150px;
+  height: 150px;
+  border: 8px solid #ccc;
+  border-radius: 50%;
+}
+.box4 li{
+  width: 600px;
+  height: 400px;
+  border: 1px solid #ccc;
+}
