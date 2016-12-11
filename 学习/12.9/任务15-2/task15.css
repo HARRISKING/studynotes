@@ -49,8 +49,7 @@ html,body{
 .kuang1{
   text-align: center;
   position: relative;
-  top:662px;
-
+  top:90%;
 }
 .kuang1 h1{
   color: red;
@@ -220,7 +219,7 @@ padding-top: 115px;
 }
 .kuang6{
   width :960px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .kuang6 p{
   color: #ccc;
