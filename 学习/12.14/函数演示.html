@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      // function functionName(name){
+      //   console.log('name:',name)
+      // }
+      // fuctionName('sdsf');
+      //
+      //
+      // var functionName = function(){
+      //   console.log('name','age','sex');
+      // };
+      //
+      //
+      // function sum(a,b){
+      //   return a+b;
+      // }
+      // console.log( sum(8,666) );
+      //
+      //
+      // function sum(a,b,c){
+      //   return a+b+c;
+      // }
+      // console.log( sum(11,23,54) );
+      // console.log( sum(11+45) ) //NaN___11+45+number(c)=11+45+undefined=NaN
+      // console.log( example(4,78) )//82
+      //
+      //
+      // function example(a,b){
+      //   return(a+b)
+      // }
+      //
+      //
+      // function research(name,age,sex){
+      //   console.log('name:',name);
+      //   console.log('age:',age);
+      //   console.log('sex:',sex);
+      //   console.log(arguments);
+      //   arguments[0] = 'newName';
+      // }
+      // research('张三','22','male');
+      // research('李四','22','female');
+      //
+      //
+      // function chongzai(a,b){
+      //   return a+b;
+      // }
+      // console.log( chongzai(56,66) )
+      //
+      //
+      // function chongzai(a,b,c){
+      //   return a+b+c;
+      // }
+      // console.log( chongzai(33,44,55) )
+      //
+      //
+      // function chongzai(){
+      //   var chongzai = 0;
+      //   for(var i=0;i<arguments.length;i++){
+      //     chongzai = chongzai + arguments[i];
+      //   }
+      //   return chongzai;
+      // }
+      // console.log( chongzai(34,56,88,44,344) );
+      // //重载实现方法
+      //
+      //
+      // var saySex = function(sex){
+      //   console.log(sex);
+      // };
+      // saySex('男');
+      //
+      //
+      // (function lijizhixing(){
+      //   console.log('hello');
+      // })()
+      //
+      //
+      // (function lijizhixing(n){
+      //   console.log('hello');
+      //   console.log(n);
+      // })(1000)
+      //
+      //
+      var authorName="山边小溪";
+      function doSomething(){
+          var blogName="梦想天空";
+          function innerSay(){
+              alert(blogName);
+          }
+          innerSay();
+      }
+      doSomething();
+      // alert(authorName); //山边小溪
+      // alert(blogName); //脚本错误
+      // doSomething(); //梦想天空
+      // innerSay() //脚本错误
+      //
+    </script>
+  </body>
+</html>
