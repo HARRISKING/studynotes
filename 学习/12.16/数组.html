@@ -15,7 +15,17 @@
     // }\
     // var li = ['hello'];
     // li charAt(4)
-    var li = [12,1,2,3];
+    // var li = [12,1,2,3];
+
+    function randStr (n) {
+      var str = '0123456789qwertyuiasdfg';
+      var result = '';
+      for(var i=0;i<n;i++){
+        result += str[Math.floor(Math.random()*str.length)];
+      }
+      return result;
+    }
+    var str = randStr(5);
     </script>
   </body>
 </html>
