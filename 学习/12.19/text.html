@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>text</title>
+  </head>
+  <body>
+    <script>
+      var prod = {
+        name: '女装',
+        style: ['短款','冬季','春装']
+      }
+    function getTpl(data){
+      var string='<dl class = "product">';
+      string+='\n \t <dt>' + prod.name + '</dt>'
+      for(var i = 0; i < prod.style.length; i++){
+        string+='\n \t <dd>' + prod.style[i] + '</dd>'
+      }
+      string+='\n</dl>';
+      return string;
+    }
+
+getTpl(prod);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

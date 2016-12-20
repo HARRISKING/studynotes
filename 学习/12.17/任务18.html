@@ -97,15 +97,108 @@
 //
 // }
 // ageSort(people) // [ bob, mary, john ]
+// var john = { name: "John Smith", age: 23 };
+// var mary = { name: "Mary Key", age: 18 };
+// var bob = { name: "Bob-small", age: 6 };
+// var people = [ john, mary, bob ];
+// function ageSort(data){
+//   data.sort(function(a, b){
+//     if(a.age<b.age){
+//       return -1;
+//     }
+//     if(a.age>b.age){
+//       return 1;
+//     }
+//     return 0;
+//   }
+// )};
+// ageSort(people);
+// console.log(people);
+// var ucFirst;
+// function ucFirst(data){
+//   return data.charAt(0).toUpperCase()+data.slice(1);
+// }
+// console.log(ucFirst('hunger'));
+// function truncate(str,maxlength){
+//     if(str.length>maxlength){
+//       return str.substr(0,maxlength)+'...';
+//     }
+//     return str;
+//   }
+// truncate('dfgdsdfgsdgs','5');
+// console.log(truncate('dfgdsdfgsdgs','5'));
+// function array(min, max){
+//   return Math.random() * (max - min) + min;
+// }
+// console.log(array(3,11));
+// function array(min,max){
+//   return Math.floor(Math.random()*(max - min) + min);
+// }
+// console.log(array(1,4));
 
-function ucFirst(data){
-  
+// function array(min,max){
+//   return Math.floor(Math.random()*(max - min + 1) + min);
+// }
+// console.log(array(1,4))
+
+// function array(min,max,length){
+//   var array1=(Math.floor(Math.random()*(max-min+1)+min))
+//   if(array1.length <= length){
+//     array1.push(Math.floor(Math.random()*(max-min+1)+min))
+//   }
+//   return (array1)
+// }
+// console.log(array(1,4,5))
+// ?????????
+
+// function array(min,max,length){
+//   var arr=[];
+//   for(i=0; i<length; i++){
+//     arr.push(Math.floor(Math.random()*(max-min+1)+min))
+//   }
+//   return (arr)
+// }
+// console.log(array(1,4,5))
+
+// function getRandStr(n){
+//   var str="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   var result="";
+//   for(i=0;i<n;i++){
+//     result+=str[Math.floor(Math.random()*str.length)]
+//   }
+//   return result;
+// }
+// var str = getRandStr(10); // 0a3iJiRZap
+// console.log(str)
+// var obj = {
+//   className: 'open menu'
+// }
+// var array=obj.className.split(' ');
+// function addClass(obj,data){
+//   if(array.indexOf(data)===-1){
+//     obj.className+=" "+data;
+//   }
+// }
+// function removeClass(obj,data){
+//   if(array.indexOf(data)!==-1){
+//     boj.className=obj.className.replace(data,"");
+//   }
+//   // array.splice(array.indexOf(data),1);
+// }
+//   removeClass(obj,'sdfsdfsdf')
+
+function isNumeric (el){
+    return typeof el === 'number';
 }
-ucFirst('happy')
-
-
-
-
+var arr = ["a",3,4,true, -1, 2, "b"];
+function filter(arr,fun){
+  for(var i=0;i<arr.length;i++){
+    if(!fun(arr[i])){
+      arr.splice(i,1);
+    }
+  }
+  return arr;
+}
 
 
 
