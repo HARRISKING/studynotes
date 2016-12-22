@@ -85,27 +85,23 @@
 
     // 代码四：
     // var Runtime = (function(){
-    //     var now; var end; var interval;
+    //     //code here ...
     //     var obj = {
     //         start: function(){
-    //         now = Date.now()
-    //         return now;
-    //       },
+    //           new Date()
+    //               //code here ...， 当前时间
+    //         },
     //         end: function(){
-    //           end = Date.now()
-    //           return end;
+    //              //code here ...  结束时间
     //         },
     //         get: function(){
-    //           interval = end - now;
-    //           return interval + "毫秒数"
+    //              //code here ...  获取执行时间
     //         }
     //     };
     // return obj;
     // }());
     // Runtime.start();
-    // for(i=0; i<1000; i++){
-    //   console.log(1)
-    // }
+    // //todo somethint
     // Runtime.end();
     // console.log(  Runtime.get() );
 
@@ -113,63 +109,19 @@
     // for(var i=0; i<21; i++){
     //   console.log(i);
     // }
-    // for(var i=0; i<20; i++){
-    //   console.log(i+1);
+    for(var i=0; i<20; i++){
+      console.log(i+1);
+    }
     // }
-    // }
-
-    // var obj1= {
-    //   var string = "afasfsagsdafdf";
-    //   var array = [1,23,4,53,42,435,34];
-    //   var
-    // }
-    // var object1={
-    //   name:"affda",
-    //   age:13,
-    //   sex:"女",
-    //   other:{
-    //     name:"dfaf",
-    //     age:12
-    //   }
-    // };
-    // 方法一：
-    //     function deepCopy(obj){
-    //       var obj2 = {};
-    //       for(var key in obj){
-    //         if (typeof obj[key]==="object"){
-    //           obj2[key] = deepCopy(obj[key])
-    //         }else{
-    //           obj2[key] = obj[key];
-    //         }
-    //       }
-    //       return obj2;
-    // }
-    // 方法二：
-    // var obj2 =JSON.parse(JSON.stringify(object1));
 
 
 
-    // var name = "The Window";
-    // 　　var object = {
-    // 　　　　name : "My Object",
-    // 　　　　getNameFunc : function(){
-    // 　　　　　　return function(){
-    // 　　　　　　　　return this.name;
-    // 　　　　　　};
-    // 　　　　}
-    // 　　};
-    // 　　alert(object.getNameFunc()());
-    var name = "The Window";
-    　　var object = {
-    　　　　name : "My Object",
-    　　　　getNameFunc : function(){
-    　　　　　　var that = this;
-    　　　　　　return function(){
-    　　　　　　　　return that.name;
-    　　　　　　};
-    　　　　}
-    　　};
-    　　alert(object.getNameFunc()());
+
+
+
+
+
+
     </script>
   </body>
 </html>
