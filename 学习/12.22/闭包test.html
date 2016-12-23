@@ -1,0 +1,111 @@
+<script>
+// __scope__:{a:1; b:function}
+  // var a = 1;
+  // function b(){
+  //   //__scope__:{ }
+  //   console.log(a);
+  // }
+  // b();
+  // function dealwith(){
+  //   var i = 0;
+  //   function inc(){
+  //     i++;
+  //   }
+  //   function dec(){
+  //     i--;
+  //   }
+  //   function get(){
+  //     return i;
+  //   }
+  //   function set(k){
+  //     i = k;
+  //   }
+  //   return {
+  //     inc:inc,
+  //     dec:dec,
+  //     get:get,
+  //     set:set
+  //   }
+  // }
+  // var deal = dealwith();
+  // deal.set(100);
+  // deal.inc();
+  // deal.get();
+  // deal.dec();
+  // deal.get();
+
+// function dealwith(){
+//   var a = 1;
+//   function get(){
+//     console.log("dsfasfdsfg");
+//   }
+//   return get();
+// }
+// var deal = dealwith();
+// deal.get();
+
+// 闭包实验：
+// function something(){
+//   var name = "harrisking";
+//   function look(){
+//     alert(name);
+//   }
+//   return look();
+// }
+// something();
+// demo:
+// (function(){
+//   var count = [];
+//   for (var i = 0;i< 10; i++){
+//     count[i] = function(){
+//       return i;
+//     }
+//   }
+//   console.log(count[0]())
+// } )()
+
+(function(){
+  var count = [];
+  for (var i=0; i<10; i++){
+    count[i] = (function(num){
+      return function(){
+        return num;
+      };
+    })(i);
+  }
+  console.log( count[4]() )
+})
+
+(function(){
+  var f1, f2;
+  f1 = (function(){
+    return function(){
+      return num;
+    }
+  })(1);
+
+  f2 = (function(){
+    return function(){
+      return num;
+    }
+  })(2);
+
+  console.log(f1());
+  console.log(f2());
+})();
+
+// (function(){
+//   var a = 1;
+//   console.log(a);
+// })();
+
+
+
+
+
+
+
+
+
+
+</script>
