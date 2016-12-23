@@ -1,0 +1,49 @@
+<script>
+
+var fnArr = [];
+for (var i = 0; i < 10; i ++) {
+  fnArr[i] =  function(){
+      return i;
+  };
+}
+console.log( fnArr[3]() );  //
+
+
+var Car = //todo;
+Car.setSpeed(30);
+Car.getSpeed(); //30
+Car.accelerate();
+Car.getSpeed(); //40;
+Car.decelerate();
+Car.decelerate();
+Car.getSpeed(); //20
+Car.getStatus(); // 'running';
+Car.decelerate();
+Car.decelerate();
+Car.getStatus();  //'stop';
+//Car.speed;  //error
+
+var a = 1;
+setTimeout(function(){
+    a = 2;
+    console.log(a);
+}, 0);
+var a ;
+console.log(a);
+a = 3;
+console.log(a);
+
+var flag = true;
+setTimeout(function(){
+    flag = false;
+},0)
+while(flag){}
+console.log(flag);
+
+for(var i=0;i<5;i++){
+    setTimeout(function(){
+         console.log('delayer:' + i );
+    }, 0);
+    console.log(i);
+}
+</script>
