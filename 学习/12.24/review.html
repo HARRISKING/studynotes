@@ -1,0 +1,104 @@
+<script>
+// 实验一：
+  // var fnArr = [];
+  // for (var i = 0; i < 10; i ++) {
+  // fnArr[i] = (function(n){
+  //       return n;
+  //   })(i);
+  // }
+  // console.log( fnArr[6] );
+  // 学会分析：fnArr[i]数组里面跟的不再是函数，而是函数执行完的数字，因此，fnArr[i]是数组不是数字。
+  // console.log(fnArr)
+
+  // 实验二：
+//   var fnArr = [];
+// for (var i = 0; i < 10; i ++) {
+//   (function (){
+//     var s = i;
+//     fnArr[i] = function(){
+//           return s;
+//       }
+//     })();
+// }
+// console.log( fnArr[3]() );
+// 实验三：
+//   var fnArr = [];
+// for (var i = 0; i < 10; i ++) {
+//     fnArr[i] = (function(){
+//       var n = i;
+//        return function(){
+//         return n;
+//       }
+//     })();
+//   };
+// console.log( fnArr[3]() );
+// 汽车闭包：
+
+var Car = (function(){
+  var speed = 0;
+  function getSpeed(){
+    return speed;
+  };
+  function setSpeed(sum){
+     speed = sum;
+  };
+  function accelerate(){
+    speed += 10;
+  };
+  function decelerate(){
+    speed -= 10;
+  };
+  function getStatus(){
+    if (speed>0){
+      return "running";
+    }else{
+      return "stop";
+    }
+  }
+  return {
+    'setSpeed':setSpeed,
+    'getSpeed':getSpeed,
+    'accelerate':accelerate,
+    'decelerate':decelerate,
+    'getStatus':getStatus,
+  };
+}());
+Car.setSpeed(30);
+Car.getSpeed(); //30
+Car.accelerate();
+Car.getSpeed(); //40;
+Car.decelerate();
+Car.decelerate();
+Car.getSpeed(); //20
+Car.getStatus(); // 'running';
+Car.decelerate();
+Car.decelerate();
+Car.getStatus();  //'stop';
+//Car.speed;  //error
+
+// for(var i=0;i<5;i++){
+//     setTimeout(function(){
+//          console.log('delayer:' + i );
+//     }, 0);
+//     console.log(i);
+// }
+
+// for(var i=0;i<5;i++){
+//   (function(){
+//     var s = i;
+//     setTimeout(function(){
+//         console.log('delayer:' + s );
+//     }, 0);
+//   })()
+//   console.log(i);
+// }
+
+// for(i = 0; i < 10; i++){
+//   var a = (function(){
+//     var n = i;
+//     return function(){
+//       console.log(n);
+//     }
+//   })();
+// }
+</script>

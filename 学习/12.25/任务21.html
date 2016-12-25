@@ -1,0 +1,94 @@
+<script>
+// var string = "w e2j\  3&5*h$7j";
+// var pattern = /\s/g;
+// console.log(string.match(pattern));
+// [" ", " ", " "]
+
+  // var string = "asd345AAS$#%@$HT";
+  // var pattern = /[a-zA-Z0-9]/g;
+  // console.log(string.match(pattern));
+  // //["a", "s", "d", "3", "4", "5", "A", "A", "S", "H", "T"]
+
+  // var string = "asb assbb bas asb";
+  // var pattern = /\bas/g;
+  // console.log(string.match(pattern));//["as", "as", "as"];
+  // var string = "asb assbb bas asb";
+  // var pattern = /as\b/g;
+  // console.log(string.match(pattern));//["as"];
+  // var string = "asb assbb  as abds bas asb";
+  // var pattern = /\bas\b/g;
+  // console.log(string.match(pattern));//["as"];
+
+
+  // var string = "asb assbb bas asb";
+  // var pattern = /[a.s]/g;
+  // console.log(string.match(pattern));
+  //["a", "s", "a", "s", "s", "a", "s", "a", "s"];
+
+//   var string = "haa a adf fdgadfa";
+//   var pattern = /a/g;
+//   console.log(string.match(pattern));
+// //["a", "a", "a", "a", "a", "a"];
+//
+//   var string = "haa a adf fdgadfa";
+//   var pattern = /a+/g;
+//   console.log(string.match(pattern));
+//   //["aa", "a", "a", "a", "a"];
+
+
+  // var string = "asf assbssfff bas asb";
+  // var pattern = /as/g;
+  // console.log(string.match(pattern));
+  // //["as", "as", "as", "as"];
+  // var string = "asf assbssfff bas asb";
+  // var pattern = /as?/g;
+  // console.log(string.match(pattern));
+  // //["as", "as", "as", "as"];
+
+
+
+
+  var string = "ajhkha atra aa a45a";
+  var pattern = /^\w/g;
+  console.log(string.match(pattern));
+  //["a"];
+
+  /*
+   \b指的是单词边界，包括 开头、结尾、空格分割、中横线分割
+   所以对于  hunger-valley 中的 hunger 会被认为是一个单词，
+   但hunger-valley整体才是一个 class， 所以 hasClass的判断不能用 \b
+  */
+  function hasClass(el, cls) {
+      var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)')
+      return reg.test(el.className);
+  }
+
+   提示: el为dom元素，cls为操作的class， el.className获取el元素的class
+
+   var re = /*正则...*/
+
+   var subj = "color: #121212; background-color: #AA00ef; width: 12px; bad-colors: f#fddee #fd2 "
+
+   alert( subj.match(re) )  // #121212,#AA00ef
+
+   var str = 'hello  "hunger" , hello "world"';
+   var pat =  /".*"/g;
+   str.match(pat);
+
+   str = '.. <!-- My -- comment \n test --> ..  <!----> .. '
+   re = /.. your regexp ../
+
+   str.match(re) // '<!-- My -- comment \n test -->', '<!---->'
+
+   var re = /* your regexp */
+
+   var str = '<> <a href="/"> <input type="radio" checked> <b>'
+   str.match(re) // '<a href="/">', '<input type="radio" checked>', '<b>'
+
+
+
+
+
+
+
+</script>

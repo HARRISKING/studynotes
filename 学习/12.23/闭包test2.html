@@ -11,25 +11,41 @@
 
 
 //   代码题1：
-  var fnArr = [];
-for (var i = 0; i < 10; i ++) {
-    fnArr[i] =  function(){
-        return i;
-    };
-}
-// console.log( fnArr[3]() );
+//   var fnArr = [];
+// for (var i = 0; i < 10; i ++) {
+//     fnArr[i] =  function(){
+//         return i;
+//     };
+// }
+// // console.log( fnArr[3]() );
+//
+//
+// var fnArr = [];
+// for(var i = 0; i < 10; i++){
+//   (function(){
+//     var s=i;
+//     fnArr[i] = function(){
+//       return n;
+//     }
+//   })()
+// }
 
 
-var fnArr = [];
-for(var i = 0; i < 10; i++){
-  (function(n){
-    var s=n;
-    fnArr[i] = function(){
-      return n;
-    }
-  })(i)
-}
-console.log( fnArr[5]() );
+
+// var fnArr = [];
+// for (var i = 0; i < 10; i ++) {
+//   fnArr[i] =  (function(){
+//       var n = i ;
+//       return function(){
+//         return n ;
+//       }
+//   })();
+// }
+// console.log( fnArr[5]() );
+
+
+
+
 // damo1:
 // console.log(fnArr)
 // console.log(fnArr[6])

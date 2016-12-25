@@ -1,0 +1,57 @@
+<script>
+test实验
+  var pattern = new RegExp("HARRISKING");
+  var pattern1 = /hello/;
+  var string1 = "HARRISKING,HELLO";
+  console.log(pattern.test(string1));//true;
+  var string2 = "helo world";
+  console.log(pattern1.test("string2"));//false;
+
+  test2
+  var string = "there are not love between us,at least you are not love me.";
+  var pattern = new RegExp("at least");
+  console.log(pattern.test(string));
+  console.log(pattern.exec(string));
+
+  test3
+  var string = "there are not love between us,at least you are not love me.";
+  console.log(string.search(/us/)); //27;  代表第一个 u 下标为27
+  console.log(string.search(/Us/i)); //-1;  代表 Us 不存在
+  console.log(string.search(/Us/i)); //27;  i表示不区分大小写
+
+  test4
+  var string = "a 1 b 2 c 3 d 4 f5";
+  console.log(string.match(/\d+/));   // ["1"]; “\d”代表数字，“+”代表一个或多个；
+  console.log(string.match(/\d+/g));  //["1", "2", "3", "4", "5"];“g”代表全局，这里是找字符串string中所有的数字的意思；
+  test5
+  var string = "there are not har love between  HAR us,at least haR you are not hAr love me.";
+  console.log(string.replace(/har/,"haha"));  //用“haha”替换掉“har”,但是有大小写区分;
+  console.log(string.replace(/har/ig,"haha"));  //用“haha”替换掉“har”,没有大小写区分且替换掉所有;
+  test5
+  var string = "a  b c     d e";
+  console.log(string.split(" "));  //使用空格来分隔字符串并转化为数组；
+  console.log(string.split(/\s+/));  //"\s"代表空格；"+"代表一个或多个；使用空格来分隔字符串并转化为数组；
+  console.log(/[harrisking]/.exec('r'));  //r;
+  console.log(/[harrisking]/.test("s"));  //true;
+
+  console.log("helloc".search(/[abc]/));  //5;此时相当于匹配一个字符
+  console.log("dkfjakljdflajaf".match(/[j]/g));  //["j", "j", "j"];全局匹配并提取字符j;
+  console.log("acfodessghghgjfd23423524573547562SGSDHTYJSAGDJDFFB".match(/[a-z0-9A-Z]/g));
+
+  var string = "hello,harrisking";
+  var pattern = /[^alo]/g;
+  console.log(string.match(pattern));
+  ["h", "e", ",", "h", "r", "r", "i", "s", "k", "i", "n", "g"]
+  var string = "hello,my world,this will be a better day."
+  var pattern = /[hello|world|better]/g;
+  console.log(string.match(pattern));
+  //["h", "e", "l", "l", "o", "w", "o", "r", "l", "d", "t", "h",
+  // "w", "l", "l", "b", "e", "b", "e", "t", "t", "e", "r", "d"]
+
+
+
+
+
+
+
+</script>
