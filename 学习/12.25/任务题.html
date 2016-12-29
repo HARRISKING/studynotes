@@ -1,40 +1,155 @@
 <script>
-  function trim(str){
+    // function trim(str){
+    //   if(str.match(/^\s+/g).length>0){
+    //     return str.replace(/^\s+/g,"");
+    //   }else if(str.match(/\s+$/g).length>0){
+    //     return str.replace(/\s+$/g,"");
+    //   }
+    //   return 0;
+    // }
+    // var str = " sdfsddfsf ";
+    // trim(str);
 
+    // function trim(str){
+    //   return str.replace(/^\s+|\s+$/g,"");
+    // }
+    // var str = " sdfsd dfsf ";
+    //
+    //   console.log(trim(str));
+
+    // function isEmail(str){
+    //   if(/\S+[@]{1}(\S)+(\S)+[\.]{1}(\S)+(\w)+/.test(str)==true){
+    //     return str;
+    //   }else{
+    //   console.log("wrong");
+    // }
+    // }
+    //   function isEmail(str) {
+    //   return ((str.search(/\S+[@]{1}(\S)+[\.]{1}(\w)+/)) >-1)
+    //
+    // // }
+    //   var str = "1906157348@@163..com";
+    //   isEmail(str);
+
+    // function isPhoneNum(str){
+    //   if(/^[1]+[0-9]{10}/.test(str)==true){
+    //     return str;
+    //   }else{
+    //     console.log("wrong");
+    //   }
+    // }
+    // var str = "1872sdf06030253";
+    // isPhoneNum(str);
+
+    // function isValidUserName(str){
+    //   if(/^\w{4,20}$/.test(str)==true){
+    //     return str;
+    //   }
+    //   console.log("wrong");
+    // }
+    // function isValidUserName(str){
+    //   if(str.match(/\W/g).length>0){
+    //     console.log("wrong");
+    //   }
+    //   return str;
+    // }
+
+    // function isValidUserName(str){
+    //   return /^\w{4,20}$/.test(str)
+    // }
+    // var str = "asdgaaaaaaaaaasdg";
+    // isValidUserName(str);
+
+
+    // function isValidPassword(str){
+    //   if(/(^\w{6,20}$)*/g.test(str)==true){
+    //     return str;
+    //   }
+    //   console.log("wrong");
+    // }
+    //   var str = "sdfaadfsdsdsd";
+    //   isValidPassword(str);
+
+    // function isValidPassword(str){
+    //   if(/^[A-Z]*+[a-z]*+[0-9]*+[_]*$/g.test(str)==true){
+    //     return str;
+    //   }
+    //   console.log("wrong");
+    // }
+    //   var str = "sdfaadfsdsdsd";
+    //   isValidPassword(str);
+
+    // function isValidPassword(str){
+    //   if(str.length<6||str.length>20){
+    //     console.log("wrong");
+    //   }
+    //   if(/\W/.test(str)){
+    //     console.log("wrong");
+    //   }
+    //   if(/(^\d+$)|(^_+$)|(^[A-Z]+$)|(^[a-z]+$)/g.test(str)){
+    //     console.log("wrong");
+    //   }
+    //   return str;
+    // }
+
+  //   function isValidPassword(str){
+  //     if(/^\w{6,20}$/.test(str)){
+  //       if(/(^\d+$)|(^_+$)|(^[a-z]+$)|(^[A-Z]+$)/g.test(str)){
+  //       console.log("wrong");
+  //     }else{
+  //       return st
+  //     }
+  //   }else{
+  //     return false;
+  //   }
+  // }
+  //   var str = "sfsdf_SDFSF";
+  //   isValidPassword(str);
+
+  // var re = /#\w{6}/g
+  // var subj = "color: #121212; background-color: #AA00ef; width: 12px; bad-colors: f#fddee #fd2 ";
+  // alert( subj.match(re) )  // #121212,#AA00ef
+  //  //[a-fA-F0-9]是 十六进制数字使用的字符；
+  //
+  // var str = 'hello  "hunger" , hello "world"';
+  // var pat =  /".*?"/g;
+  // str.match(pat);
+  //
+
+  // var str = "adsasdasdfasdfasd";
+  // console.log(/as/g.exec(str));
+
+  /*
+   \b指的是单词边界，包括 开头、结尾、空格分割、中横线分割
+   所以对于  hunger-valley 中的 hunger 会被认为是一个单词，但hunger-valley整体才是一个 class， 所以 hasClass的判断不能用 \b
+  */
+  // function hasClass(el, cls) {
+  //     var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)')
+  //     return reg.test(el.className);
+  // }
+
+  // str = '.. <!-- My -- comment \n test --> ..  <!----> .. '
+  // re = /<[\w\W]*?>/g;
+  // str.match(re) // '<!-- My -- comment \n test -->', '<!---->'
+
+  // str = '.. <!-- My -- comment \n test --> ..  <!----> .. '
+  // re = /<[^\r]*?>/g;
+  // str.match(re) // '<!-- My -- comment \n test -->', '<!---->'
+
+  // var re = /<[^>]+/g;
+  // var str = '<> <a href="/"> <input  type="radio" checked> <b>'
+  // str.match(re)
+  // '<a href="/">', '<input type="radio" checked>', '<b>'
+  function hasClass(el,cls){
+    var reg = new RegExp("(\\s|^)"+ cls + "(\s|$)","g");
+    return reg.test(el.className);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  function addClass(el,cls){
+    var reg = new RegExp("(\\s|^)" + cls + "(\s|$)",g);
+    if(reg.test(el.className) != true){
+      el.className = el.className + " " + cls;
+    }
+  }
 
 
 

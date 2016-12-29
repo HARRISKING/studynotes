@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body></body>
+  <script>
+    // function chongzai(){
+    //   var a = 0;
+    //   for(i = 0; i < arguments.length; i++){
+    //     a += arguments[i];
+    //   }
+    //   return a ;
+    // }
+    // console.log(chongzai(12,33,4));
+    // function chongzai(a,b){
+    //   console.log(a+b)
+    // }
+    // function pingfang(){
+    //   var a=0;
+    //   for(i=0;i<arguments.length;i++){
+    //     a += arguments[i] * arguments[i];
+    //   }
+    //   return a;
+    // }
+    // console.log(pingfang(2,5,7,8));
+
+
+    // function fn(fn2){
+    //    var fn2;
+    //    function fn2(){
+    //         console.log('fnnn2');
+    //     }
+    //    console.log(fn2);
+    //     fn2 = 3;
+    //    console.log(fn2);
+    //    console.log(fn);
+    //
+    //  }
+    // fn(10);
+
+    // fn();
+    // var i = 10;
+    // var fn = 20;
+    // console.log(i);
+    // function fn(){
+    //   console.log(i);
+    //   var i = 99;
+    //   fn2();
+    //   console.log(i);
+    //   function fn2(){
+    //     i = 100;
+    //   }
+    // }
+
+    // var i;
+    // var fn;
+    // function fn(){
+    //   var i;
+    //   function fn2(){
+    //     i = 100;
+    //   };
+    //   console.log(i);//undefined;
+    //    i = 99;
+    //   fn2();
+    //   console.log(i);//100;
+    // }
+    // fn();
+    //  i = 10;
+    //  fn = 20;
+    // console.log(i);//10
+
+
+  // var prod = {
+  //   name :'女装',
+  //   styles :['短款','冬装','春装']
+  // } ;
+  // function getTpl(data){
+  //   var string;
+  //   string = '<dl class = "product">'
+  //   string += '\n\t<dt>'+ prod.name +'</dt>'
+  //   for(i=0;i<prod.styles.length;i++){
+  //      string += '\n\t<dd>'+prod.styles[i]+'</dd>'
+  //   }
+  //   string += '\n</dl>';
+  //   console.log(string);
+  // };
+  // var result = getTpl(prod);
+
+  // function find(arr,data){
+  //   for(var i=0; i<arr.length; i++){
+  //     if(arr[i]==data){
+  //       console.log(i);
+  //     }
+  //   }
+  // };
+  // var arr = ["test", 2, 1.5, false];
+  // find(arr,2);
+  // find(arr,"1.5");
+
+  // function filterNumeric(){
+  //   var newarr = [];
+  //   for(var i=0; i<arr.length; i++){
+  //     if(typeof arr[i]=='number'){
+  //       newarr.push(arr[i]);
+  //     }
+  //   }
+  //   return newarr;
+  // };
+  // var arr = ["a", "b", 1, 3, 5, "b", 2];
+  // console.log(filterNumeric(arr));
+  // var obj = {
+  //   className: 'open menu'
+  // }
+  // var array = obj.className.split(" ");
+  // function addClass(obj,data){
+  //   for(i=0; i<array.length; i++){
+  //     if(array[i]==data){
+  //       return;
+  //     }
+  //     array.push(data);
+  //     return array.join(' ');
+  //   }
+  // }
+  // console.log(addClass(obj,'sdfa'));
+  //
+  // function removeClass(obj,data){
+  //   for(i=0; i<array.length; i++){
+  //     if(array[i]==data){
+  //       array.splice(i,1);
+  //       return array.join(' ');
+  //     }
+  //   }
+  //   return;
+  // }
+  // console.log(removeClass(obj,'open'));
+
+  // var obj = {
+  //   className: 'open menu'
+  // }
+  // var array = obj.className.split(" ");
+  // function addClass(obj,data){
+  //     if(array.indexOf(data)==-1){
+  //       array.push(data);
+  //       return array.join(' ');
+  //     }
+  //   }
+  // console.log(addClass(obj,'sdfa'));
+  // function removeClass(obj,data){
+  //     if(array.indexOf(data)!==-1){
+  //       array.splice(array[array.indexOf(data)],1);
+  //       return array.join(' ');
+  //     }
+  //   return;
+  // }
+  // console.log(removeClass(obj,'open'));
+
+  // function camelize(data){
+  //   array = data.split('-');
+  //   for(i=0; i<array.length; i++){
+  //     array[i]=array[i].charAt(0).toUpperCase()+array[i].slice(1);
+  //   }
+  //   return array.join("");
+  // }
+  // console.log(camelize("a-b-c"))
+
+  // function isPalindrome(data){
+  //   array = data.split('');
+  //   for(i=0; i<array.length; i++){
+  //     if((array[i])!=(array[array.length-i-1])){
+  //       return false;
+  //     }
+  //     return array.join("");
+  //   }
+  //   return;
+  // }
+  // isPalindrome("abcdddcba")
+
+  // function isPalindrome(data){
+  //   var array = data.split('');
+  //   for(i=0; i<array.length; i++){
+  //     if(array[i]==array[array.length-i-1]){
+  //       return array.join("");
+  //     }
+  //     return false;
+  //   }
+  //   return;
+  // }
+  // isPalindrome("abcdddcba")
+
+  // function isPalindrome(text){
+  //     var arr=text.split("");
+  //     for (var i=1;i<arr.length;i++){
+  //         if((arr[i-1])!=(arr[arr.length-i])){
+  //             console.log('not Palindrome');
+  //             break;
+  //         } else {
+  //             console.log('is Palindrome');
+  //         }
+  //         break;
+  //     }
+  //     return 0;
+  // }
+
+  var john = { name: "John Smith", age: 23 }
+  var mary = { name: "Mary Key", age: 18 }
+  var bob = { name: "Bob-small", age: 6 }
+  var people = [ john, mary, bob ]
+  function ageSort(arr){
+    arr.sort(function(p1,p2){
+      return p1.age > p2.age;
+    })
+  }
+console.log(ageSort(people));
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</html>
