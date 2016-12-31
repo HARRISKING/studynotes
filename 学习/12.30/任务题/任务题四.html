@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>renwu4</title>
+    <style>
+
+      .tab{
+        outline: 1px solid #ccc;
+        height: 50px ;
+        width:200px;
+        float:left;
+        line-height: 50px;
+        text-align: center;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .cot{
+        outline:1px solid #ccc;
+        width:600px;
+        height:200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab a tab1">tab1</div>
+    <div class="tab a tab2">tab2</div>
+    <div class="tab a tab3">tab3</div>
+    <div class="cot"></div>
+    <script>
+      var tab = document.querySelector(".tab"),
+          childs = tab.querySelectorAll(".a"),
+          console.log(childs)
+          // console.log(tab.querySelectorAll(".a"));
+      for(i=0; i<childs.length; i++){
+
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id = "part">
+      <p class="part1">段落二<a href="http://www.baidu.com">我是链接</a></p>
+      <p class="part2">段落三</p>
+      <p class="part3">段落四</p>
+      <img src="#" name="ha" alt="无法显示">；
+    </div>
+  </body>
+  <script>
+  var parts = document.getElementById("part")
+  parts.children //  [p.part1, p.part2]
+  parts.childNodes //  [text, p.part1, text, p.part2, text]
+  </script>
+</html>

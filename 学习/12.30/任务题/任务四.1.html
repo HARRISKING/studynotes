@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .a{
+        outline:1px solid #ccc;
+        display:inline-block;
+        width:250px;
+        height:30px;
+        float: left;
+        line-height:30px;
+        text-align: center;
+        cursor: pointer;
+      }
+      /*.changecolor{
+        background-color: #ccc;
+      }*/
+      .tab:after{
+        content:'';
+        display: block;
+        clear: both;
+      }
+      .box{
+        outline:1px solid #ccc;
+        width:750px;
+        height:200px;
+        position:absolute;
+        left:48px;
+        top:48px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="tab">
+      <li class="a">tab1</li>
+      <li class="a">tab2</li>
+      <li class="a">tab3</li>
+    </ul>
+    <div class="box"></div>
+    <script>
+      var tab = document.querySelector(".tab"),
+          box = document.querySelector(".box"),
+          childs = tab.querySelectorAll("li");
+
+      for(var i=0; i<childs.length; i++){
+        (function(n){
+          childs[i].addEventListener('click',function(){
+            box.innerHTML = "内容" +(n+1);
+          })
+      })(i)
+    };
+      // childs[0].addEventListener('click',function(){
+      //   box.innerHTML = "内容" + 1;
+      // })
+      // childs[1].addEventListener('click',function(){
+      //   box.innerHTML = "内容" + 2;
+      // })
+      // childs[2].addEventListener('click',function(){
+      //   box.innerHTML = "内容" + 3;
+      // })
+    </script>
+  </body>
+</html>
