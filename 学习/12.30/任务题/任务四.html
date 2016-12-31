@@ -14,7 +14,7 @@
         cursor: pointer;
       }
       .changecolor{
-        background-color: #ccc;
+        background-color: #999;
       }
       .tab:after{
         content:'';
@@ -33,13 +33,15 @@
   </head>
   <body>
     <ul class="tab">
-      <li class="a">tab1</li>
+      <li class="a changecolor">tab1</li>
       <li class="a">tab2</li>
       <li class="a">tab3</li>
     </ul>
-    <div class="box"></div>
-    <script>
+    <div class="box changecolor">内容一</div>
+    <div class="box">内容二</div>
+    <div class="box">内容三</div>
 
+    <script>
     var Utils = {
 
         hasClass: function(ele, cls){
@@ -85,49 +87,24 @@
         }
     };
 
-
-
-
-
-
-
       var tab = document.querySelector(".tab"),
+      tab.addEventListener('click',function(e){
+        var target = e.target;
+            tabs = tab.children,
+            index = Utils.indexOf(target),
+            boxs = document.querySelectorAll('.box');
+
+            if(index > -1){
+              Utils.removeClass(tabs,'changecolor')
+              Utils.addClass(target,'changecolor')
+              Utils.removeClass(boxs,'changecolor')
+              Utils.addClass(boxs[index],'changecolor')
+            }
+      })
           box = document.querySelector(".box"),
           childs = tab.querySelectorAll("li");
 
-      for(var i=0; i<childs.length; i++){
-        (function(n){
-          childs[i].addEventListener('click',function(){
-            box.innerHTML = "内容" +(n+1);
-          })
-      })(i)
-    };
-    for(var i=0; i<childs.length; i++){
-        childs[i].addEventListener('click',function(e){
-          e.target.style.backgroundColor = "red";
-        })
-    };
 
-
-    // function removeClass(obj,data){
-    //
-    // }
-
-      // childs[0].addEventListener('click',function(){
-      //   box.innerHTML = "内容" + 1;
-      //   childs.className = "changecolor";
-      //
-      // })
-      // childs[1].addEventListener('click',function(){
-      //   box.innerHTML = "内容" + 2;
-      //   childs.className = "changecolor";
-      //
-      // })
-      // childs[2].addEventListener('click',function(){
-      //   box.innerHTML = "内容" + 3;
-      //   childs.className = "changecolor";
-      //
-      // })
     </script>
   </body>
 </html>

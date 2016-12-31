@@ -1,0 +1,22 @@
+<script type="text/javascript">
+
+  var test = document.getElementById('test')
+  function hasClass(el, cls) {
+  //左边是开头或者空格,右边是结尾或者空格
+  var reg = new RegExp('(\\s|^)' + cls + '(\s|$)', 'g');
+  return reg.test(el.className);
+  }
+  function addClass(el, cls) {
+  var reg = new RegExp('(\\s|^)' + cls + '(\s|$)', 'g');
+  if (reg.test(el.className)) {
+  el.className = el.className + ' ' + cls;
+  }
+  }
+  function removeClass(el, cls) {
+  var reg = new RegExp('(\\s|^)' + cls + '(\s|$)', 'g');
+  //先替换成空格 再去掉多余的空格
+  if (!reg.test(el.className)) {
+  el.className = el.className.replace(reg, ' ').replace(/\s{2,}/g, '  ');
+  }
+  }
+</script>
