@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      // function isPalindrome(data){
+      //   var string1 = data.split('').reverse().join('');
+      //   if(string1==data){
+      //     return "满足条件";
+      //   }
+      //   return "wrong";
+      // };
+      // console.log(isPalindrome('abccba'));
+
+      // var john = { name: "John Smith", age: 23 }
+      // var mary = { name: "Mary Key", age: 18 }
+      // var bob = { name: "Bob-small", age: 6 }
+      // var people = [ john, mary, bob ]
+      // ageSort(people); // [ bob, mary, john ]
+
+
+      // function ageSort(data){
+      //   data.sort(
+      //     function compare(obj1,obj2){
+      //     if(obj1.age < obj2.age){
+      //       return -1;
+      //     }
+      //     if(obj1.age > obj2.age){
+      //       return 1;
+      //     }
+      //     return 0;
+      //   }
+      // )};
+      // console.log(ageSort(people)); // [ bob, mary, john ]
+
+      // ageSort(people)
+      // function compare(obj1,obj2){
+      //   if(obj1.age<obj2.age){
+      //     return -1;
+      //   }
+      //   if(obj1.age>obj2.age){
+      //     return 1;
+      //   }
+      //   return 0;
+      // }
+
+      // // function isNumeric (el){
+      // // return typeof el === 'number';
+      // // }
+      // //
+      // arr = ["a",3,4,true, -1, 2, "b"]
+      // //   arr = filter(arr, isNumeric) ; // arr = [3,4,-1, 2], 过滤出数字
+      // // arr = filter(arr, function(val){ return typeof val === "number" && val > 0 });
+      // // // arr = [3,4,2] 过滤出大于0的整数
+      //
+      // function a(arr){
+      //   for(i=0; i<arr.length; i++){
+      //     if(typeof arr[i] !="number"){
+      //       return arr.split('').replace(arr[i].split(''),"");
+      //
+      //     }
+      //   }
+      // }
+
+      // function filter(arr,data){
+      //   for(i=0; i<arr.length; i++){
+      //     if(typeof arr[i] !="number"){
+      //       arr.remove(arr[i],"");
+      //     }
+      //   }
+      // }
+
+
+      // function isNumeric (el){
+      // return typeof el === 'number';
+      // }
+      // arr = filter(arr, isNumeric) ; // arr = [3,4,-1, 2], 过滤出数字
+      // arr = filter(arr, function(val){ return typeof val === "number" && val > 0 });
+      // // // arr = [3,4,2] 过滤出大于0的整数
+      //
+      // var arr = ["a",3,4,true, -1, 2, "b"]
+      // function filter(arr, func){
+      //   for(var i=0; i<arr.length; i++){
+      //     if(!func(arr[i])){
+      //       arr.splice(i,1);
+      //     }
+      //   }
+      //   return arr;
+      // }
+
+
+      // arr = ["a",3,4,true, -1, 2, "b"]
+      // arr = filter(arr, isNumeric) ;
+      //   // arr = [3,4,-1, 2], 过滤出数字
+      // arr = filter(arr, function(val){ return typeof val === "number" && val > 0 });
+      // // arr = [3,4,2] 过滤出大于0的整数
+      // function isNumeric (el){
+      // return typeof el === 'number';
+      // }
+      // arr = ["a",3,4,true, -1, 2, "b"]
+      //
+      // function filter(arr,func){
+      //   for(var i=0; i<arr.length; i++){
+      //     if(!func(arr[i])){
+      //       arr.splice(i,1);
+      //     }
+      //     return arr;
+      //   }
+      // }
+      //
+      // console.log(arr = filter(arr, isNumeric));
+      // console.log(arr = filter(arr, function(val){ return typeof val === "number" && val > 0 }));
+    //   function ucFirst(data){
+    //     return data.charAt(0).toUpperCase()+data.slice(1);
+    //   }
+    // console.log(ucFirst('happy'))
+
+    //== "hello, thi...";
+    //== "hello world"
+
+    // function truncate(str,num){
+    //   var array = str.split("");
+    //   if(array.length > num){
+    //   var str2 = str.substring(num,str.length);
+    //   return str.replace(str2,"...");
+    //   }
+    //   return str;
+    // }
+    // console.log(truncate("hello, this is hunger valley,", 10));
+    // console.log(truncate("hello world", 20));
+
+    // function array(min,max,len){
+    //   var arr = [];
+    //   for(var i=0; i<len; i++){
+    //     arr.push(Math.floor(Math.random()*(max-min+1)+min))
+    //   }
+    //   return arr;
+    // }
+    // console.log(array(2,8,7))
+
+    // function getRandStr(len){
+    //   var str = "ghigklmnopqrstuvwxyz1234567890AQZWSXCDERFVGTBNHYUJMIKOLP";
+    //   var arr = str.split('');
+    //   var result=[];
+    //   for(var i=0; i<len; i++){
+    //     result+=arr[Math.floor(Math.random()*arr.length)];
+    //   }
+    //   return result;
+    // }
+    // var str = getRandStr(10); // <0a3iJiRZap></0a3iJiRZap>
+    // console.log(getRandStr(10))
+
+    // function getRandStr(len){
+    //   var str = "ghigklmnopqrstuvwxyz1234567890AQZWSXCDERFVGTBNHYUJMIKOLP";
+    //   var result="";
+    //   for(var i=0; i<len; i++){
+    //     result+=str[Math.floor(Math.random()*str.length)];
+    //   }
+    //   return result;
+    //
+    // }
+    // var str = getRandStr(10); // <0a3iJiRZap></0a3iJiRZap>
+    // console.log(getRandStr(10))
+
+
+    // function getIntv(data){
+    //   var distance = Date.parse(data)-Date.now();
+    //   var days = Math.floor(distance/1000/60/60/24);
+    //   var hours = Math.floor((distance-days*1000*60*60*24)/1000/60/60);
+    //   var minutes = Math.floor((distance-days*1000*60*60*24-hours*1000*60*60)/1000/60);
+    //   var secounds = Math.floor((distance-days*1000*60*60*24-hours*1000*60*60-minutes*1000*60)/1000);
+    //   return "距离除夕还有"+days+"天"+hours+"小时"+minutes+"分"+secounds+"秒";
+    // }
+    // var str = getIntv("2017-01-27");
+    // console.log(str);
+
+
+
+    // function getChsDate(data){
+    //   var array = ['零','一','二','三','四','五','六','七','八','九'];
+    //   dataArr = data.split('-').join('').split('');
+    //   if(dataArr[4]=="0"){
+    //     dataArr.splice(4,1);
+    //   }else{
+    //     return dataArr;
+    //   };
+    //   if(dataArr[dataArr.length-2]=="0"){
+    //     dataArr.splice(length-2,1);
+    //   }else{
+    //     return dataArr;
+    //   };
+    //   console.log(dataArr)
+    //
+    //   var result=[];
+    //   for(i=0; i<9; i++){
+    //     result.push(array[dataArr[i]]);
+    //   }
+    //   console.log(result)
+    //   return result;
+    // }
+
+    // function getChsDate(data){
+    //   var array = data.split('-');
+    //   var year = "";
+    //   var hanzi = ['零','一','二','三','四','五','六','七','八','九'];
+    //   for(i=0; i<4; i++){
+    //     year += hanzi[array[0][i]];
+    //   }
+    //   function m_d(sth){
+    //     if(sth.length==1){
+    //       sth = "0"+sth;
+    //     };
+    //     if(sth[0]==0){
+    //       return hanzi[sth[1]];
+    //     };
+    //     if(sth[0]==1){
+    //       return "十" + hanzi[sth[1]];
+    //     };
+    //     if(sth[0]==2){
+    //       return "二十" + hanzi[sth[1]];
+    //     };
+    //     if(sth[0]==3){
+    //       if(sth[1]==0){
+    //         return "三十";
+    //       };
+    //       return "三十"+ hanzi[sth[1]];
+    //     }
+    //   }
+    //   return year+"年"+m_d(array[1])+"月"+m_d(array[2])+'日';
+    // }
+    //
+    // var str = getChsDate('2015-05-31');
+    // console.log(str);  // 二零一五年一月八日
+
+
+
+    // function getLastNDays(data){
+    //   var time1 = Date.now() - data*1000*60*60*24;
+    //   var time2 = new Date(time1);
+    //   return time2.getFullYear()+'-'+(time2.getMonth()+1)+'-'+time2.getDate();
+    // }
+    // var lastWeek = getLastNDays(7);
+    // // ‘2016-01-08’
+    // var lastMonth = getLastNDays(30);
+    // //'2015-12-15'
+    // console.log(lastWeek)
+    // console.log(lastMonth)
+
+    // var Runtime = (function(){
+    //    //code here ...
+    //   var obj = {
+    //     start: function(){
+    //     var start1 = Date.now()
+    //      },
+    //     end: function(){
+    //      var end1 = Date.now()
+    //      },
+    //     get: function(){
+    //     end1-start1
+    //    }
+    //   };
+    // return obj;
+    // }());
+    //
+    // Runtime.start();
+    // //todo somethintRuntime.end();
+    // console.log( Runtime.get() );
+
+//   function a(n){
+//     if(a(1)==1){
+//       return 1;
+//     };
+//     if(a(2)==2){
+//       return 2;
+//     };
+//     a(n-1)+a(n-2);
+//   }
+// console.log(a(30))
+
+  // var fnArr = [];
+  //
+  //   for (var i = 0; i < 10; i ++) {
+  //     (function(){
+  //       var n=i;
+  //     fnArr[n] = function(){
+  //     return n;
+  //     };
+  //   })();
+  // }
+  //
+  // console.log( fnArr );
+  // console.log( fnArr[3]() );
+    // var i=0;
+    // a=setInterval(function(){
+    //   console.log(i++);
+    // },1000);
+    // function stop(){
+    //   clearInterval(a)
+    // }
+
+    // var i=1;
+    // function time(){
+    //   a=setTimeout(function(){
+    //     console.log(i++);
+    //     time();
+    //   },1000)
+    // };
+    // function stop(){
+    //   clearTimeout(a);
+    // };
+
+    // function getmini(){
+    //   var start=Date.now();
+    //   var i=0;
+    //   var clock = setTimeout(function(){
+    //     i++;
+    //     if(i===1000){
+    //       clearTimeout(clock);
+    //       var end = Date.now();
+    //       console.log((end-start)/i+'毫秒');
+    //     }
+    //     clock = setTimeout(arguments.callee,0)
+    //   })
+    // }
+    // console.log(getmini());
+
+    // for(var i=0;i<5;i++){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
