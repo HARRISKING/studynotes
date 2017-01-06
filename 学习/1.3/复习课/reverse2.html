@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reverse2</title>
+  </head>
+  <body>
+    <script>
+      // var str = "adsfaw34 3j2jk345 34hkj2";
+      // var pattern = /^\w/g;
+      // console.log(str.match(pattern));
+      // var pattern = new RegExp('HARRISKING');
+      // var string = "HARRISKINGadsafffHARdfdRISsdfdKING"
+      // console.log(pattern.test(string));//true;
+      // var str = "adsfaw343j2jk34hkj2";
+      // var pattern = new RegExp('3');
+      // console.log(pattern.exec(str));
+      // var pattern = /\w/g;
+      // var pattern = /./g;
+      // console.log(pattern.exec(str));
+      // console.log(str.match(pattern));
+
+
+      // function trim(data){
+      //     return data.replace(/^\s+|\s+$/g,"");
+      // }
+      // console.log(trim('adfadf'))
+      // var obj = {
+      //   className: "open menu"
+      // }
+
+      // function hasClass(obj, class){
+      //   var reg = new RegExp('(\\s|^)' + class + '(\s|$)', 'g');
+      //   return reg.test(obj.className);
+      // };
+
+      // hasClass(obj,'menu');
+
+      // function isEmail(str){
+      //   if(/\S+[@]{1}(\S)+(\S)+[\.]{1}(\S)+\w+/.test(str)){
+      //     return str;
+      //   }else{
+      //     console.log("wrong");
+      //   }
+      // }
+      // console.log(isEmail('190615 7348@qq.com'));
+
+      // function isPhoneNumber(str){
+      //   if(/^[1]+[0-9]{10}/.test(str)){
+      //     return str;
+      //   }
+      //   console.log("wrong")
+      // }
+      // console.log(isPhoneNumber("11111111111"))
+      // function isValidUserName(str){
+      //   if(/^\w{6,20}$/.test(str)){
+      //     return str;
+      //   }
+      //   console.log("wrong");
+      // }
+      // console.log(isValidUserName("safsads"))
+      // function isValidPassword(str){
+      //   if(str.length>20||str.length<6){
+      //     console.log("wrong")
+      //   };
+      //   if(/\W/.test(str)){
+      //     console.log("wrong")
+      //   };
+      //   if(/(^[A-Z]+$)|(^[a-z]+$)|(^\d+$)|(^_+$)/g.test(str)){
+      //     console.log("wrong")
+      //   };
+      //   return str;
+      // }
+      // console.log( isValidPassword("13f445") )
+
+
+      // var str = 'hello  "hunger" , hello "world"';
+      // var pat =  /".*?"/g;
+      // console.log(str.match(pat));
+
+
+      // str = '.. <!-- My -- comment \n test --> .. <!----> .. '
+      // re = /<>/g;
+      // console.log(str.match(re));
+
+      // var re = /<[ ^> ] + >/g;
+      // var str = '<> <a href="/"> <input  type="radio" checked> <b>';
+      // console.log(str.match(re));
+      // // '<a href="/">', '<input type="radio" checked>', '<b>'
+
+
+
+      // var re = /<[ ^> ]+?>/g;
+      // var str = '<> <a href="/"> <input  type="radio" checked> <b>'
+      // str.match(re)   //输出：//'<a href="/">', '<input type="radio"
+
+      // var re = /<+[^>]+>/g;
+      // var str = '<> <a href="/"> <input  type="radio" checked> <b>'
+      // str.match(re)   //输出：//'<a href="/">', '<input type="radio" checked>', '<b>'
+
+      var re = /<+[^>]+?>/g;
+    var str = '<> <a href="/"> <input  type="radio" checked> <b>'
+    // str.match(re)   输出：//'<a href="/">', '<input type="radio"
+      // var re = /<\w.*?>/g;
+      // var str = '<> <a href="/"> <input  type="radio" checked> <b>'
+      console.log(str.match(re))
+      //输出: // "<a href="/">", "<input  type="radio" checked>", "<b>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
