@@ -5,22 +5,90 @@
     <title>reverse3</title>
   </head>
   <body>
-    <div id="part">
-      <p class="part1">段落一<a href="#">我是链接</a></p>
-      <!-- <p class="part2">段落二</p> -->
-    </div>
-
-
-
-    <!-- <p>hahah <span>king</span></p>
-    <a href="#">fdgfdg</a> -->
+    <button class="btn">点我</button>
     <script>
+      var btn = document.querySelector(".btn");
+      btn.addEventListener('click',function(e){
+        console.log('at btn...',e);
+        e.stopPropagation();
+      });
+      document.body.addEventListener('click',function(e){
+        console.log('at body...',e);
+      });
 
-      var div = document.getElementById('part');
-      console.log(div.removeAttribute('id','part')) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // <!-- <div id="part">
+    //   <p class="part1">段落一<a href="#">我是链接</a></p>
+    // </div> -->
+    // <!-- <div id="test1" class="tedt2 test3"></div>
+    // <script> -->
+    //   // var newP = document.createElement('p');
+    //   // document.appendChild(newP);
+    //
+    //
+    //   function ajax(opts){
+    //     <!-- <button id="btn">点我</button> -->
+    //
+    //   }
+    //   document.querySelector('#btn').addEventListener('click', function(){
+    //       ajax({
+    //           url: 'getData.php', //接口地址
+    //           type: 'get', // 类型， post 或者 get,
+    //           data: {
+    //               username: 'xiaoming',
+    //               password: 'abcd1234'
+    //           },
+    //           success: function(ret){
+    //           console.log(ret); // {status: 0}
+    //           },
+    //          error: function(){
+    //           console.log('出错了')
+    //           }
+    //       })
+    //   });
+    //
+    //
+    //
+
+      // var test1 = document.getElementById("test1");
+      // var test2 = document.getElementsByClassName("test2");
+      // test1.removeAttribute("class","test2")
+      // var test2 = document.querySelector('.test2');
+
+
 
       // var p = document.createElement('p');
       // document.body.appendChild(p);
+      //
+      //
+      //
+      // var div = document.getElementById('part');
+      // console.log(div.getAttribute('id')) ;
+
+
       // var p = document.createTextNode('dsfdsfds')
       // var p1 = document.getElementsByTagName("p");
       // p1.getAttribute('class');
