@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <input type="text" id="username" placeholder="请输入用户名">
+    <button id="btn">提交</button>
+
+    <dl id="ct">
+
+    </dl>
+
+    <script type="text/javascript">
+  function ajax(opts){
+    var xmlhttp = new XMLHttpRequest();
+    var dataStr = '';
+    for(var key in opts.data){
+       dataStr += key + '='+ opts.data[key]+'&'
+    }
+    dataStr = dataStr.substr(0,dataStr.length-1);
+
+    if(opts.type.toLowerCase()==='post'){
+      xmlhttp.open(opts.type,opts.url,true);
+      xmlhttp.setRequestHeader('content-type','application/x-www-form-urlencoded');
+      xmlhttp.send(dataStr);
+    }
+    if(opts.type.toLowerCase()==='get'){
+      xmlhttp.open(opts.type,opts.url+'?'+dataStr,true);
+      xmlhttp.send();
+    }
+    xmlhttp.onreadystatechange = function(){
+      if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+        var json = JSON.parse(xmlhttp.responseText);
+        opts.success(json);
+      }
+      if(xmlhttp.readyState == 4 && xmlhttp.status ==404){
+        opts.error();
+      }
+    };
+  }
+
+
+
+  document.querySelector('#btn').addEventListener('click',function(){
+    ajax({
+      url: 'test.php',  //接口地址
+      type:'get',   //类型：post或者get
+      data:{
+        username: document.querySelector('#username').value
+      },
+      success: function(jsonData){
+        dealWith(jsonData);     //{status:o}
+      },
+      error: function(){
+        console.log('出错了。。。')
+      }
+    })
+  });
+  function dealWith(jsonData){
+    var str = '<dt>性别：</dt>';
+    str += '<dd>'+ jsonData.sex +'</dd>';
+    str += '<dt>年龄：</dt>';
+    str += '<dd>'+ jsonData.age +'</dd>';
+    document.querySelector('#ct').innerHTML = str;
+  };
+
+</script>
+
+  </body>
+</html>

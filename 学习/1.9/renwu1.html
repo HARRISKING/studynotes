@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <!-- 需求是：在输入框输入用户名，点击按钮，打包请求后发给后台，后台响应对应的姓名和年龄 -->
+    <input type="text" name="username" id="username" placeholder="请输入用户名">
+    <button class="btn">提交</button>
+    <dl id="ct">
+
+    </dl>
+
+    <script>
+
+    function ajax(opts){
+        var xmlhttp = new XMLHttpRequest();
+        var dataStr = '';
+        for(var key in opts.data){
+          dataStr += key + '=' + opts.data[key]+'&'
+        }
+        dataStr = dataStr.substr(0,dataStr.length-1)
+
+        if(opts.type.toLowerCase()==='post'){
+          xmlhttp.open(opts.type,opts.url,true);
+          xmlhttp.setRequestHeader('content-type','application/x-www-form-urlencoded');
+          xmlhttp.send(dataStr);
+        }
+        if(opts.type.toLowerCase()==='get'){
+          xmlhttp.open(opts.type,opts.url+'?'+ dataStr,true);
+          xmlhttp.send();
+        }
+
+        xmlhttp.onreadystatechange = function(){
+          if(xmlhttp.readyState == 4 && xmlhttp.status == 200 ){
+            var json = JSON.parse(xmlhttp.responseText);
+            opts.success(json);
+          }
+          if(xmlhttp.readyState == 4 && xmlhttp.status == 404 ){
+            opts.error();
+          }
+        };
+    }
+
+    document.querySelector('#btn').addEventListener('click', function(){
+        ajax({
+            url: 'renwu1.php',   //接口地址
+            type: 'get',               // 类型， post 或者 get,
+            data: {
+                username: document.querySelector('#username').value;
+                password: document.querySelector('#password');
+            },
+            success: function(jsonData){
+                dealWith(jsonData);       // {status: 0}
+            },
+            error: function(){
+               console.log('出错了')
+            }
+        })
+    });
+    function dealWith(userInfo){
+      var str = '<dt>性别：</dt>';
+      str += '<dd>'+ userInfo.sex +'</dd>';
+      str += '<dt>年龄：</dt>';
+      str += '<dd>'+userInfo.age +'</dd>';
+      document.querySelector('#ct').innerHTML = str;
+    };
+
+      // document.querySelector('.btn').addEventListener('click',function(){
+      //   var xmlhttp = new XMLHttpRequest();
+      //   username = document.querySelector('#username').value;
+      //   var url = 'renwu1.php' + '?username='+username;
+      //
+      //   // GET方式:
+      //   xmlhttp.open('GET',url,true);
+      //   xmlhttp.send();
+      //   //POST方式：
+      //   // xmlhttp.open('POST','renwu1.php',true);
+      //   // xmlhttp.setRequestHeader("content-type","application/x-www-form-urlencoded");
+      //   // xmlhttp.send("username="+username);
+      //
+      //   xmlhttp.onreadystatechange = function(){
+      //     if(xmlhttp.readyState==4 && xmlhttp.status==200){
+      //       var userInfo = JSON.parse(xmlhttp.responseText);
+      //       // console.log(xmlhttp.responseText)
+      //       // console.log(userInfo)
+      //       dealWith(userInfo);
+      //     }
+      //   }
+      // });
+
+    </script>
+  </body>
+</html>
