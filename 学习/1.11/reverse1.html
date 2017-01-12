@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reverse1</title>
+  </head>
+  <body>
+      <h1 class="title1">hello,HARRISKING</h1>
+      <h1 class="title2">hello,HARRISKING</h1>
+      <h1 class="title3">hello,HARRISKING</h1>
+      <!-- <button class="btn1">隐藏</button>
+      <button class="btn2">显示</button>
+      <button class="btn3">切换</button> -->
+      <button class="btn1">淡入</button>
+      <button class="btn2">淡出</button>
+      <button class="btn3">切换</button>
+
+
+
+    <!-- <div id="ct">
+      <a href="#">链接一</a>
+      <a href="#">链接二</a>
+    </div>
+    <div id="ct2">
+      <a href="#" class="link3">链接3</a>
+    </div> -->
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('.btn1').on('click',function(){
+        $('.title1').fadeOut(1000);
+      });
+      $('.btn2').on('click',function(){
+        $('.title1').fadeIn(1000);
+      });
+
+
+
+      // $('.btn1').on('click',function(){
+      //   $('.title').hide(1000);
+      // });
+      // $('.btn2').on('click',function(){
+      //   $('.title').show(500);
+      // })
+      // $('.btn3').on('click',function(){
+      //   $('.title').toggle(1000)
+      // })
+
+
+
+
+      // $('a').bind('click',function(){
+      //   alert('hahah')
+      // })
+      // $('a').unbind('click');
+
+    </script>
+  </body>
+</html>
