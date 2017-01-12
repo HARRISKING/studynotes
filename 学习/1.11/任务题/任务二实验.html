@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>任务二</title>
+    <style media="screen">
+
+    li,ul,body,img{
+      margin: 0;
+      padding: 0;
+    }
+
+      #bar li{
+        list-style: none;
+        display: inline-block;
+        border: 1px solid #ccc;
+        color: #333;
+        cursor: pointer;
+      }
+
+      #bar .active{
+        background-color: #ccc;
+        color: red;
+      }
+      #boxs{
+        border: 1px solid #ccc;
+        display: inline-block;
+        width:500px;
+      }
+      #boxs ul > li{
+        list-style: none;
+      }
+      #boxs ul > li img{
+        border: 1px solid #ccc;
+        margin:14px 14px;
+      }
+      #boxs ul{
+        display: none;
+      }
+      #boxs > .active{
+        display: block;
+      }
+      .cover{
+        background-color: #ccc;
+        display: inline-block;
+        width:128px;
+        height:128px;
+        opacity: 0.7;
+        position: absolute;
+        top: 201px;
+        left: 352px;
+      }
+      .btn{
+        text-decoration: none;
+        position: absolute;
+        top: 255px;
+        left: 380px;
+        background-color: red;
+        color:white;
+        }
+        .btn :active{
+          background-color: #ccc;
+          color:#222;
+        }
+        #boxs ul li > div{
+          display: inline-block;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="all">
+      <div>
+        <ul id="bar">
+          <li>热门</li>
+          <li>珠宝首饰</li>
+          <li>奢侈品</li>
+        </ul>
+      </div>
+      <div id="boxs">
+        <ul class="box1 active">
+          <li>
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <a href="#">
+              <img src="http://jscode.me/uploads/profile/726-profileimg.jpg" alt="">
+              <div class="cover"></div>
+              <a href="#" class="btn">立即抢购</a>
+            </a>
+          </li>
+        </ul>
+        <ul class="box2">
+          <li>
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://jscode.me/uploads/profile/726-profileimg.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+          </li>
+        </ul>
+        <ul class="box3">
+          <li>
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://jscode.me/uploads/profile/726-profileimg.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://jscode.me/uploads/profile/726-profileimg.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+            <img src="http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('#bar > li').on('click',function(){
+        var index = $(this).index();
+        $('#bar li').removeClass('active');
+        $(this).addClass('active');
+        
+        $('#boxs ul').removeClass('active');
+        $('#boxs ul').eq(index).addClass('active');
+      })
+    </script>
+  </body>
+</html>
