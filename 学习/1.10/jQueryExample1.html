@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQueryExample</title>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+    <div id="wrap">
+    <div class="d">Item 1</div>
+    <div class="d">Item 2</div>
+    <div class="d">Item 3</div>
+    <a href="#">adsfas</a>
+    </div>
+    <button id="btn3">添加</button>
+  <script>
+
+    $('#wrap .d').on('click',function(){
+    console.log($(this).html());
+  });
+  $('#btn3').on('click',function(){
+    var $newDiv = $('<div class="d"> Item </div>');
+    $newDiv.on('click',function(){
+      console.log($(this).html())
+    })
+    $('#wrap').append($newDiv)
+  })
+
+  $('a').unbind('click',function(){
+    alert("harrisking")
+  });
+
+  // var $wrap = $('#wrap'),
+  //     $ds = $('#wrap .d'),
+  //     $link = $('#link');
+  // bind
+
+  // $ds.bind('click', function(){
+  //     console.log("dom:" + this.innerHTML); //dom元素用dom属性
+  //     console.log("jquery:" + $(this).html()); //jquery元素用jquery方法
+  // })
+  // $ds.on('click', function(){
+  //     console.log("dom:" + this.innerHTML); //dom元素用dom属性
+  //     console.log("jquery:" + $(this).html()); //jquery元素用jquery方法
+  // })
+
+  // $wrap.delegate('.d','click', function(){
+  //     console.log("dom:" + this.innerHTML); //dom元素用dom属性
+  //     console.log("jquery:" + $(this).html()); //jquery元素用jquery方法
+  // })
+  // $wrap.on('click','.d', function(){
+  //     console.log("dom:" + this.innerHTML); //dom元素用dom属性
+  //     console.log("jquery:" + $(this).html()); //jquery元素用jquery方法
+  // })
+  // $('#btn3').bind('click', function(){
+  //     $wrap.append('<div class="d">Item4</div>');
+  // });
+  </script>
+  </body>
+</html>

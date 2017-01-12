@@ -13,7 +13,7 @@
         text-align: center;
         cursor: pointer;
       }
-      .changecolor{
+      .change{
         background-color: #999;
       }
       .tab:after{
@@ -33,15 +33,25 @@
   </head>
   <body>
     <ul class="tab">
-      <li class="a changecolor">tab1</li>
+      <li class="a change">tab1</li>
       <li class="a">tab2</li>
       <li class="a">tab3</li>
     </ul>
-    <div class="box changecolor">内容一</div>
+    <div class="box change">内容一</div>
     <div class="box">内容二</div>
     <div class="box">内容三</div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('.tab .a').on('click',function(){
+        var $index = $(this).index();
+        $('this').siblings.removeClass('active');
+        $('this').addClass('active');
 
-    <script>
+        $('box').removeClass('active');
+        $('box').eq(index).addClass('active');
+      })
+    </script>
+    <!-- <script>
     var Utils = {
 
         hasClass: function(ele, cls){
@@ -104,6 +114,6 @@
            Utils.addClass(panels[index], 'active');
        }
     });
-    </script>
+    </script> -->
   </body>
 </html>

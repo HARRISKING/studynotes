@@ -59,8 +59,18 @@
         <div class="panel">内容二</div>
         <div class="panel">内容三</div>
     </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('.tab .a').on('click',function(){
+        var $index = $(this).index();
+        $('this').siblings.removeClass('active');
+        $('this').addClass('active');
 
-    <script>
+        $('box').removeClass('active');
+        $('box').addClass('active');
+      })
+    </script>
+    <!-- <script>
     var Utils = {
 
         hasClass: function(ele, cls){
@@ -123,6 +133,6 @@
        }
     });
 
-    </script>
+    </script> -->
   </body>
 </html>

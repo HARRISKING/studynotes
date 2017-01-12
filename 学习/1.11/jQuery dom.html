@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>sd</title>
+      </head>
+      <body>
+        <p id="test">这是段落中的<b>粗体</b>文本。</p>
+        <input id="test-input" type="text" placeholder="测试表单val">
+        <a id="test-a" href="http://www.jirengu.com">这是链接</a>
+        <img id="test-img" data-src="real.png" src="blank.png">
+        <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+          $('#test-img').attr('src');
+          $('#test-img').attr('src',$('#test-img').attr('data-src'))
+
+
+
+
+            // console.log( $('#test').html() );  // 这是段落中的<b>粗体</b>文本。
+            // console.log( $('#test').text() );  // 这是段落中的粗体文本
+            // console.log( $('#test-input').val() );
+            // console.log( $('#test-a').attr('href') );
+            // console.log( $('#test-img').attr('data-src') );
+        </script>
+      </body>
+    </html>
