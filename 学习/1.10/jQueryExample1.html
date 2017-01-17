@@ -21,10 +21,11 @@
   });
   $('#btn3').on('click',function(){
     var $newDiv = $('<div class="d"> Item </div>');
+    $('#wrap').append($newDiv)
+
     $newDiv.on('click',function(){
       console.log($(this).html())
     })
-    $('#wrap').append($newDiv)
   })
 
   $('a').unbind('click',function(){

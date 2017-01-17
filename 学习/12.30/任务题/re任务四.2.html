@@ -2,137 +2,128 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <style>
-      .all *{
+    <title>renwu4</title>
+    <style media="screen">
+      .mod-tab{
+        border: 1px solid #ccc;
+        width:900px
+      }
+      .mod-tab * {
         box-sizing: border-box;
       }
-      .all{
-        border:1px solid #ccc;
-        width:600px;
-      }
-      .all ul,
-      .all li {
-        margin: 0;
-        padding: 0;
+      .mod-tab ul,
+      .mod-tab li{
+        margin: 0px;
+        padding: 0px;
         list-style: none;
       }
-      .tabs li{
-        border-left: 1px solid #ccc;
+      .mod-tab .tabs li{
+        float: left;
+        border-left:1px solid #ccc;
         border-bottom: 1px solid #ccc;
-        text-align: center;
-        float:left;
-        width:200px;
-        height:30px;
+        width: 300px;
+        height: 30px;
         line-height: 30px;
-        cursor:pointer;
+        text-align: center;
+        cursor: pointer;
       }
-      .tabs li:first-child{
+      .mod-tab .tabs li.active{
+        background: #ccc;
+      }
+      .mod-tab .tabs li:first-child {
         border-left: none;
       }
-      .all:after{
-        content:"";
+      .tabs:after{
         display: block;
+        content: "";
         clear: both;
       }
-      .all .panel{
+      .panel{
+        height: 150px;
+        margin: 10px;
         display: none;
-        height:250px;
       }
-      .all .active{
+      .panel.active{
         display: block;
+      }
 
-      }
-      .all .tabs .active{
-        background-color: red;
-      }
     </style>
   </head>
   <body>
-    <div class="all">
+    <div class="mod-tab">
       <ul class="tabs">
         <li class="active">tab1</li>
         <li>tab2</li>
         <li>tab3</li>
       </ul>
-        <div class="panel active">内容一</div>
-        <div class="panel">内容二</div>
-        <div class="panel">内容三</div>
+      <div class="panel active">内容一</div>
+      <div class="panel">内容二</div>
+      <div class="panel">内容三</div>
     </div>
-    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      $('.tab .a').on('click',function(){
-        var $index = $(this).index();
-        $('this').siblings.removeClass('active');
-        $('this').addClass('active');
 
-        $('box').removeClass('active');
-        $('box').addClass('active');
-      })
-    </script>
-    <!-- <script>
+    <script type="text/javascript">
     var Utils = {
 
-        hasClass: function(ele, cls){
-            return !!ele.className.match(new RegExp('\\b'+cls+'\\b'));  //!!将表达式转化为布尔值
-        },
+      hasClass: function(ele, cls){
+          return !!ele.className.match(new RegExp('\\b'+cls+'\\b'));
+      },
 
-        addClass:function(ele, cls){
-          if(ele.length && ele.length > 0){
-              for(var i=0; i<ele.length; i++){
-                  Utils.singleAddClass(ele[i], cls);
-              }
-          }else{
-              Utils.singleAddClass(ele, cls);
-          }
-        },
-
-        removeClass:function(ele, cls){
-           if(ele.length && ele.length > 0){
-              for(var i=0; i<ele.length; i++){
-                  Utils.singleRemoveClass(ele[i], cls);
-              }
-          }else{
-              Utils.singleRemoveClass(ele, cls);
-          }
-        },
-
-        singleAddClass: function(ele, cls){
-            if(Utils.hasClass(ele,cls)) return;
-            ele.className += ' ' + cls;
-        },
-
-        singleRemoveClass: function(ele, cls){
-            ele.className = ele.className.replace(new RegExp('\\b'+cls+'\\b', 'g'), '');
-        },
-
-        indexOf: function(ele){
-            var parent = ele.parentElement,
-                siblings = parent.children;
-            for(var i=0; i<siblings.length; i++){
-                if(ele === siblings[i]) return i;
+      addClass:function(ele, cls){
+        if(ele.length && ele.length > 0){
+            for(var i=0; i<ele.length; i++){
+                Utils.singleAddClass(ele[i], cls);
             }
-            return -1;
+        }else{
+            Utils.singleAddClass(ele, cls);
         }
+      },
+
+      removeClass:function(ele, cls){
+         if(ele.length && ele.length > 0){
+            for(var i=0; i<ele.length; i++){
+                Utils.singleRemoveClass(ele[i], cls);
+            }
+        }else{
+            Utils.singleRemoveClass(ele, cls);
+        }
+      },
+
+      singleAddClass: function(ele, cls){
+          if(Utils.hasClass(ele,cls)) return;
+          ele.className += ' ' + cls;
+      },
+
+      singleRemoveClass: function(ele, cls){
+          ele.className = ele.className.replace(new RegExp('\\b'+cls+'\\b', 'g'), '');
+      },
+
+      indexOf: function(ele){
+          var parent = ele.parentElement,
+              siblings = parent.children;
+          for(var i=0; i<siblings.length; i++){
+              if(ele === siblings[i]) return i;
+          }
+          return -1;
+      }
     };
 
 
-    var tabCt = document.querySelector('.tabs');
+      var tabCt = document.querySelector('.tabs');
+      tabCt.addEventListener('click',function(e){
+        var tabs = tabCt.children,
+            target = e.target,
+            index = Utils.indexOf(target),
+            panels = document.querySelectorAll('.panel');
 
-    tabCt.addEventListener('click', function(e){
-       var target = e.target,
-           tabs = tabCt.children,
-           index = Utils.indexOf(target),
-           panels = document.querySelectorAll('.panel');
+      if(index > -1){
+        Utils.removeClass(tabs,'active');
+        Utils.addClass(target,'active');
+        Utils.removeClass(panels,'active');
+        Utils.addClass(panels[index],'active');
+      }
 
-       if(index > -1){
-           Utils.removeClass(tabs, 'active');
-           Utils.addClass(target, ' ');
-           Utils.removeClass(panels, 'active');
-           Utils.addClass(panels[index], 'active');
-       }
-    });
 
-    </script> -->
+      })
+    </script>
   </body>
 </html>

@@ -1,0 +1,22 @@
+    <script type="text/javascript">
+
+
+      function hasClass(el,cls){
+         var reg = new RegExp('(\\b)' + cls + '(\\b)','g');
+         return !!reg.test(el.className);
+      };
+
+      function addClass(el,cls){
+        if(!hasClass(el,cls)){
+          el.className += " " + cls;
+        }
+      };
+      
+      function removeClass(el,cls) {
+        if(hasClass(el,cls)){
+          el.className = el.className.replace(cls,' ').replace(/\s{2,}/g,' ')
+        }
+      };
+
+
+    </script>

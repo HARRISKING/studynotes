@@ -17,7 +17,6 @@
         margin-left: -200px;
         margin-top: -200px;
         border-radius: 5px;
-        /*display: none;*/
         z-index: 3;
 
       }
@@ -45,13 +44,6 @@
         width: 100%;
         opacity: 0.4;
         z-index: 2;
-        /*display:none;*/
-
-      }
-      .cover:after{
-        content:"";
-        display: block;
-        clear: both;
 
       }
       .btn1{
@@ -65,6 +57,13 @@
         padding:4px;
         font-family: "微软雅黑"
       }
+
+      .ableSee{
+        display: block;
+      }
+      .disableSee{
+        display: none;;
+      }
     </style>
   </head>
   <body>
@@ -77,20 +76,61 @@
         <p class="cot">我是内容2</p>
         <div class="btn2">
           <button>确定</button>
-          <button>取消</button>
+          <button class="btn4">取消</button>
         </div>
       </div>
 
 
     <script>
+    function hasClass(el,cls){
+       var reg = new RegExp('(\\b)' + cls + '(\\b)','g');
+       return !!reg.test(el.className);
+    };
+    function addClass(el,cls){
+      if(!hasClass(el,cls)){
+        el.className += " " + cls;
+      }
+    };
+    function removeClass(el,cls) {
+      if(hasClass(el,cls)){
+        el.className = el.className.replace(cls,' ').replace(/\s{2,}/g,' ')
+      }
+    };
+
+
       var btn1 = document.querySelector(".btn1"),
           cover = document.querySelector(".cover"),
-          box = document.querySelector("box"),
-          btn2 = document.querySelector("btn2");
+          box = document.querySelector(".box"),
+          btn2 = document.querySelector(".tn2");
+          cancle1 = document.querySelector('.cancel')
+          cancle2 = document.querySelector('.btn4')
 
       btn1.addEventListener('click',function(){
-        box.style.display= 'block';
+        removeClass(cover,'disableSee')
+        removeClass(box,'disableSee');
+        addClass(cover,'ableSee');
+        addClass(box,'ableSee');
+      });
+      cover.addEventListener('click',function(){
+        removeClass(cover,'ableSee')
+        removeClass(box,'ableSee');
+        addClass(cover,'disableSee');
+        addClass(box,'disableSee')
       })
+      cancle1.addEventListener('click',function(){
+        removeClass(cover,'ableSee')
+        removeClass(box,'ableSee');
+        addClass(cover,'disableSee');
+        addClass(box,'disableSee')
+      })
+      cancle2.addEventListener('click',function(){
+        removeClass(cover,'ableSee')
+        removeClass(box,'ableSee');
+        addClass(cover,'disableSee');
+        addClass(box,'disableSee')
+      })
+
+
     </script>
   </body>
 </html>

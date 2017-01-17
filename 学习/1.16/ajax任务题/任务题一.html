@@ -1,0 +1,59 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>renwu1</title>
+    </head>
+    <body>
+      <input type="text" class="name">
+      <button type="button" class="btn">提交</button>
+      <dl class="ct">
+
+      </dl>
+      <script type="text/javascript">
+        var btn = document.querySelector('.btn'),
+            value = document.querySelector('name').value,
+            url = '任务1.php' + '?name='+value;
+            btn.addEventListener('click',function(){
+              var ajax = new XMLHttpRequest();
+
+              ajax.onreadystatechange = function(){
+                if(ajax.readystate == 4 && ajax.status == 200){
+                  var response = JSON.parse(ajax.response);
+                  dealWith(response);
+                }
+              }
+              ajax.open('GET',url,true);
+              ajax.send();
+            }
+
+            function dealWith(info){
+              var str += '<dd>性别:</dd>',
+                  str += '<dt>' + info.sex + '</dt>',
+                  str += '<dd>年龄:</dd>',
+                  str += '<dt>' + info.age + '</dt>';
+                  document.querySelector('.ct').innerHTML = str;
+            }
+
+        // function ajax(opts){
+        //   // todo ...
+        // }
+        // document.querySelector('#btn').addEventListener('click', function(){
+        //   ajax({
+        //       url: 'getData.php',   //接口地址
+        //       type: 'get',               // 类型， post 或者 get,
+        //       data: {
+        //           username: 'xiaoming',
+        //           password: 'abcd1234'
+        //       },
+        //       success: function(ret){
+        //           console.log(ret);       // {status: 0}
+        //       },
+        //       error: function(){
+        //          console.log('出错了')
+        //       }
+        //   })
+        // });      </script>
+
+    </body>
+  </html>
