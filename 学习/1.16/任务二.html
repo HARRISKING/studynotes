@@ -3,8 +3,117 @@
   <head>
     <meta charset="utf-8">
     <title>任务二</title>
+    <style media="screen">
+      div,a{
+        margin:0;
+        padding:0;
+      }
+      .ct li{
+        border:1px solid #ccc;
+        height: 50px;
+        line-height:50px;
+        padding-left: 10px;
+        margin: 10px 0;
+        list-style:none;
+      }
+      .ct{
+        padding-left: 0px;
+      }
+      .btn{
+        border: 1px solid red;
+        text-align: center;
+        display: inline-block;
+        height: 30px;
+        width: 80px;
+        line-height: 30px;
+        cursor: pointer;
+        position:absolute;
+        left:50%;
+        margin-top: 30px;
+        margin-left: -40px;
+        border-radius: 5px;
+      }
+      .btn:active{
+        background-color: pink;
+        color: #222;
+      }
+    </style>
   </head>
   <body>
-    
+    <ul class="ct">
+      <li>内容一</li>
+      <li>内容二</li>
+    </ul>
+    <a class="btn">加载更多</a>
+
+    <script type="text/javascript">
+
+
+      var btn = document.querySelector('.btn');
+      btn.addEventListener('click',function(){
+
+      }
+
+
+
+      function ajax(opts){
+        var xml = new XMLHttpRequest();
+        var datastr = '';
+        for(var key in opts.data){
+          datastr += key + '=' + opts.data[key] + '&'
+        }
+        datastr=datastr.substr(0,datastr.length-1);
+
+        if(opts.type.toLowerCase()=='get'){
+          xml.open(opts.type,opts.url+'?'+datastr,true);
+          xml.send();
+        }
+        if(opts.type.toLowerCase()=='post'){
+          xml.open(opts.type,opts.url,true);
+          xml.send(datastr);
+          xml.setRequestHeader('content-type','application/x-www-form-urlencoded');
+        }
+        xml.onreadystatechange = function(){
+          if(xml.readyState==4 && xml.status == 200){
+            var json = JSON.parse(xml.responseText);
+            opts.success(json);
+          }
+          if(xml.readyState==4 && xml.status ==404){
+            opts.error();
+          }
+        }
+      }
+
+      var cur = 3;
+      document.querySelector('.btn').addEventListener('click', function(){
+          ajax({
+              url: 'renwu2.php',   //接口地址
+              type: 'get',               // 类型， post 或者 get,
+              data: {
+                start:cur,
+                len: 6
+              },
+              success: function(ret){
+                  if(json.status==1){
+                    append(json.data);
+                    cur += len;
+                  }else{
+                    console.log('失败啦')
+                  }     // {status: 0}
+              },
+              error: function(){
+                 console.log('出错了')
+              }
+          })
+      });
+
+      function append(arr){
+        for(var i=0; i<arr.length; i++){
+          var li = document.createElement('li');
+          li.innerHTML = arr[i];
+          ct.appendChild(li);
+        }
+      }
+    </script>
   </body>
 </html>

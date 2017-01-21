@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>tabs</title>
+    <style media="screen">
+      div,ul,li{
+        margin: 0;
+        paddding:0;
+      }
+      #tabsAll{
+        border: 1px solid #ccc;
+        width:600px;
+      }
+      .tabs>li{
+        list-style:none;
+        display: inline-block;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        width: 199px;
+        height:30px;
+        line-height:30px;
+        text-align: center;
+        margin-left: -8px;
+        position:relative;
+        left:8px;
+        cursor: pointer;
+      }
+      .tabs :first-child{
+        border-left: none;
+      }
+      .tabs>li.active{
+        background:#555;
+        color:white;
+      }
+      .tabs{
+        padding-left:0;
+      }
+      .panel{
+        height: 250px;
+        margin:20px;
+        display: none;
+      }
+      .panel.active{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tabsAll">
+      <ul class="tabs">
+        <li class="tab">tab1</li>
+        <li class="tab">tab2</li>
+        <li class="tab">tab3</li>
+      </ul>
+      <div class="panel active">内容一</div>
+      <div class="panel">内容二</div>
+      <div class="panel">内容三</div>
+    </div>
+
+
+    <div id="tabsAll">
+      <ul class="tabs">
+        <li class="tab">tab1</li>
+        <li class="tab">tab2</li>
+        <li class="tab">tab3</li>
+      </ul>
+      <div class="panel active">内容一</div>
+      <div class="panel">内容二</div>
+      <div class="panel">内容三</div>
+    </div>
+
+
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('.tabs').on('click','.tab',function(){
+        var index = $(this).index();
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active')
+
+        $(this).parents('#tabsAll').find('.panel').removeClass('active');
+        $(this).parents('#tabsAll').find('.panel').eq(index).addClass('active');
+      })
+    </script>
+
+  </body>
+</html>

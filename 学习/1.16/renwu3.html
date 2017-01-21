@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>表单验证</title>
+    <style media="screen">
+      dl,dt.dd.h3,input,button{
+        margin:0;
+        padding:0;
+        font-size: 14px;
+      }
+      dd{
+        position: relative;;
+        top: -21px;
+        left: 43px;
+      }
+      input{
+        height: 25px;
+        width: 250px;
+        border:1px solid #ccc;
+        border-radius: 5px;
+      }
+      button{
+        margin-top:20px;
+        height: 25px;
+        width: 40px;
+      }
+      .cue{
+        color: #889;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: -10px;
+      }
+      .register{
+        margin:30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='register'>
+      <h3>注册</h3>
+      <form class="form" action="renwu3.php" method="post">
+        <dl class="">
+          <dt>用户名：</dt>
+          <dd><input type="text" name="username" placeholder="请输入用户名..."></dd>
+          <dd class="cue">只能是字母、数字、下划线，3-10个字符</dd>
+          <dt>密码：</dt>
+          <dd><input type="text" name="password" placeholder="请输入密码..."></dd>
+          <dd class="cue">大写字母、小写、数字、下划线最少两种，6-15个字符</dd>
+
+          <dt>再输一次：</dt>
+          <dd><input type="text" name="psdagain" placeholder="请再输入一次..."></dd>
+          <dd><button type="button" name="button">注册</button></dd>
+        </dl>
+      </form>
+    </div>
+
+
+
+  </body>
+</html>

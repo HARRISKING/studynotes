@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>新闻加载example</title>
+    <style media="screen">
+      .newsFrame{
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="newsFrame">
+      <ul>
+        <li>在北大听讲座</li>
+        <li>统计陷阱</li>
+        <li>浅薄</li>
+      </ul>
+      <button class="btn">换一批</button>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+     <script type="text/javascript">
+      $('.btn').on('click',function(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open('GET','news','true');
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function(){
+          if(xmlhttp.readyState==4 && xmlhttp.status==200){
+            appendhtml(JSON.parse(xmlhttp.responseText))
+          }else{
+            console.log('error');
+          }
+        }
+
+        function appendhtml(news){
+          var html = '';
+          for(i=0; i<news.length; i++){
+            html += '<li>' + news[i] + '</li>';
+          }
+          $('.newsFrame').innerHTML = html;
+        }
+
+
+      })
+    </script>
+  </body>
+</html>

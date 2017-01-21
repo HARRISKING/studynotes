@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>renwu1</title>
+  </head>
+  <body>
+    <input type="text" class="username" placeholder="请输入...">
+    <button type="button" name="button" class="btn">提交</button>
+    <dl class="ct">
+
+    </dl>
+
+    <script type="text/javascript">
+
+      document.querySelector('.btn').addEventListener('click',function(){
+        var xml = new XMLHttpRequest();
+        var username = document.querySelector('.username').value;
+        var url = 'renwu1.php' + '?username='+username;
+        //GET的方式：
+
+        // xml.open('GET',url,true);
+        // xml.send();
+        //POST的方式：
+
+        xml.open('POST','renwu1.php',true);
+        xml.setRequestHeader('content-type','application/x-www-form-urlencoded');
+        xml.send('username='+username);
+
+
+        xml.onreadystatechange = function(){
+          if(xml.readyState==4 && xml.status==200){
+            var userInfo = JSON.parse(xml.responseText);
+            dealWith(userInfo);
+          }
+        }
+        function dealWith(userInfo){
+          var str = '<dt>性别：</dt>';
+          str += '<dd>'+userInfo.sex+'</dd>';
+          str += '<dt>年龄：</dt>';
+          str += '<dd>'+userInfo.age+'</dd>';
+          document.querySelector('.ct').innerHTML = str;
+      }
+      })
+
+
+
+      function dealWith(userInfo){
+        var str = '<dt>性别：</dt>';
+        str += '<dd>'+userInfo.sex+'</dd>';
+        str += '<dt>年龄：</dt>';
+        str += '<dd>'+userInfo.age+'</dd>';
+        document.querySelector('.ct').innerHTML = str;
+
+
+
+
+
+      function ajax(opts){
+        var xml = new XMLHttpRequest();
+        var datastr = '';
+        for(var key in opts.data){
+          datastr += key + '=' + opts.data[key] + '&'
+        }
+        datastr=datastr.substr(0,datastr.length-1);
+
+        if(opts.type.toLowerCase()=='get'){
+          xml.open(opts.type,opts.url+'?'+datastr,true);
+          xml.send();
+        }
+        if(opts.type.toLowerCase()=='post'){
+          xml.open(opts.type,opts.url,true);
+          xml.send(datastr);
+          xml.setRequestHeader('content-type','application/x-www-form-urlencoded');
+        }
+        xml.onreadystatechange = function(){
+          if(xml.readyState==4 && xml.status == 200){
+            var username = json.parse(xml.responseText);
+            opts.success(username)
+          }
+          if(xml.readyState==4 && xml.status ==404){
+            opts.error();
+          }
+        }
+      }
+
+
+      document.querySelector('#btn').addEventListener('click', function(){
+          ajax({
+              url: 'getData.php',   //接口地址
+              type: 'get',               // 类型， post 或者 get,
+              data: {
+                  username: 'xiaoming',
+                  password: 'abcd1234'
+              },
+              success: function(ret){
+                  dealWith(ret);       // {status: 0}
+              },
+              error: function(){
+                 console.log('出错了')
+              }
+          })
+      });
+    </script>
+  </body>
+</html>

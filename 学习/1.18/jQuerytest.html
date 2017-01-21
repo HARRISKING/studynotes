@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animate</title>
+    <style media="screen">
+      .box1{
+        width:80px;
+        height:80px;
+        background-color: red;
+      }
+      .btn{
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a1">
+      <p>我的的手机发的说法<span>拉开距离空间</span>都是开发</p>
+    </div>
+
+    <input type="text" name="test" class="test11" value="">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <button class="btn">启动!  超级变换形态</button>
+  <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  //每次点击都会回到最初位置的情况
+    // $('.btn').on('click',function(){
+    //   $('.box1').finish();
+    //
+    //   $('.box1').animate({
+    //     'width':'600px',
+    //     'background-color':'blue',
+    //   })
+    //   $('.box1').animate({
+    //     'width':'80px',
+    //     'border-radius':"50%",
+    //
+    //   })
+    //   $('.box1').animate({
+    //     'width':'80px',
+    //     'border-radius':'0',
+    //     })
+    // })
+
+      //每次点击都会阻止再次点击的情况
+    var clickable = true;
+    $('.btn').on('click',function(){
+      if(!clickable){
+        return;
+      }
+      clickable = false;
+      // $('.box1').finish();
+
+      $('.box1').animate({
+        'width':'600px',
+        'background-color':'blue',
+      })
+      $('.box1').animate({
+        'width':'80px',
+        'border-radius':"50%",
+
+      })
+      $('.box1').animate({
+        'width':'80px',
+        'border-radius':'0',
+      },function(){
+           clickable = true;
+          })
+
+
+    })
+  </script>
+  </body>
+</html>

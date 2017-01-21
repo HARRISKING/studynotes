@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquerytest</title>
+  </head>
+  <body>
+    <div id="header">afsdfa</div>
+    <div id="body">
+      <h3 class="title">我是段落</h3>
+      <p class="words">我是字符串</p>
+    </div>
+    <a href="#" class="link">我是链接</a>
+    <button type="button" name="button" class="btn1">点我变隐藏</button>
+    <button type="button" name="button" class="btn2">点我变出现</button>
+
+    <ul class="wrap">
+      <li class="d">item1</li>
+      <li class="d">item2</li>
+      <li class="d">item3</li>
+    </ul>
+    <button class="btn3">添加元素</button>
+
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $('.wrap').on('click','.d',function(){
+        console.log($(this).html());
+      })
+      $('.btn3').on('click',function(){
+        $('.wrap').append( $('<li class="d">item...</li>') )
+
+      })
+
+
+
+
+
+
+      $('\*').css({'color':'red'})
+
+      $('.btn1').on('click',function(){
+        $('.link').hide();
+      });
+      $('.btn2').on('click',function(){
+        $('.link').show();
+      })
+    </script>
+  </body>
+</html>
