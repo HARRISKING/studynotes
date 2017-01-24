@@ -15,11 +15,6 @@
         margin: 10px 0;
         line-height: 40px;
         padding-left: 10px;
-
-      }
-      .cot li:hover{
-        background: green;
-        color:white;
       }
       .btn{
         display: inline-block;
@@ -43,32 +38,54 @@
   </head>
   <body>
     <ul class="cot">
-      <li>内容一</li>
-      <li>内容二</li>
+      <li>内容1</li>
+      <li>内容2</li>
     </ul>
     <a class="btn">加载更多</a>
 
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
     <script type="text/javascript">
-    $('.btn').on('click',function(){
+    $('.cot').on('mouseenter','li',function(){
+      $(this).css({
+        background: 'green',
+        color: 'white'
+      })
+    });
+    $('.cot').on('mouseleave','li',function(){
+      $(this).css({
+        background: 'white',
+        color: 'black'
+      })
+    });
 
-      var start = 2
-      ajax({
-        url: 'router.js',
-        method: 'GET',
+    var index = 1
+    $('.btn').on('click',function(){
+      $.ajax({
+        url: '/loading',
+        method: 'get',
         data:{
-          len:3;
-          start:
+          len:3,
+          start:index
         }
       }).done(function(result){
+        appendHtml(result);
+        index++;
 
       }).fail(function(){
-
+          console.log('error')
       })
+
+      function appendHtml(info){
+        var html = "";
+        html += '<li>'+"内容"+info.array[0]+'</li>',
+        html += '<li>'+"内容"+info.array[1]+'</li>',
+        html += '<li>'+"内容"+info.array[2]+'</li>',
+        $('.cot').append(html);
+      }
 
     })
 
-    function
+
 
     </script>
   </body>
