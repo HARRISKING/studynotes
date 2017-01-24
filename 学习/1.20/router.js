@@ -34,8 +34,7 @@ app.get('/news', function(req, res) {
 	}
 	});
 });
-app.get('/news', function(req, res) {
-	res.send());
+
 /**
  * 发送 GET 请求, 有参数
  * GET /user/100

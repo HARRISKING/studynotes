@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery任务二</title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+      .cot li{
+        border: 1px solid #ccc;
+        height:40px;
+        list-style: none;
+        margin: 10px 0;
+        line-height: 40px;
+        padding-left: 10px;
+
+      }
+      .cot li:hover{
+        background: green;
+        color:white;
+      }
+      .btn{
+        display: inline-block;
+        width: 80px;
+        height:30px;
+        border:1px solid red;
+        color:red;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        left:50%;
+        margin-left: -40px;
+      }
+      .btn:hover{
+        background: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="cot">
+      <li>内容一</li>
+      <li>内容二</li>
+    </ul>
+    <a class="btn">加载更多</a>
+
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript">
+    $('.btn').on('click',function(){
+
+      var start = 2
+      ajax({
+        url: 'router.js',
+        method: 'GET',
+        data:{
+          len:3;
+          start:
+        }
+      }).done(function(result){
+
+      }).fail(function(){
+
+      })
+
+    })
+
+    function
+
+    </script>
+  </body>
+</html>

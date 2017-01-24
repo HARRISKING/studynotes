@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>动画效果演示</title>
+        <style media="screen">
+          .box{
+            border: 1px solid #ccc;
+            background-color: red;
+            width:300px;
+            height:300px;
+          }
+        </style>
+      </head>
+      <body>
+        <div id="ct">
+          <div class="box"></div>
+          <button class="btn1">隐藏</button>
+          <button class="btn2">展示</button>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+        <script type="text/javascript">
+
+          var isShow=true;
+          $('.btn1').on('click',function(){
+            if(isShow){
+              $('.box').hide()
+              isShow =false
+            }else{
+              $('.box').show()
+              isShow =true
+            }
+          })
+        </script>
+      </body>
+    </html>

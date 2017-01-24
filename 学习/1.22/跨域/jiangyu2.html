@@ -1,0 +1,23 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>降域test2</title>
+        <style media="screen">
+      </style>
+      </head>
+      <body>
+        <div class="ct">
+          <h1>使用降域来实现跨域</h1>
+          <div class="main">
+            <input type="text" class="content" placeholder="http://a.har.com:8080">
+          </div>
+        </div>
+        <script type="text/javascript">
+          document.querySelector('.main input').addEventListener('input',function(){
+            window.parent.document.querySelector('input').value = this.value;
+          })
+          document.domain = 'har.com';
+        </script>
+      </body>
+    </html>

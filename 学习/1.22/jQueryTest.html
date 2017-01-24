@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jquery动画实验1</title>
+    <style media="screen">
+      /*.unit .active{
+        color: red;
+        border: 1px solid #ccc;
+      }*/
+    </style>
+  </head>
+  <body>
+    <!-- <div class="ct">
+      <ul class="unit">
+        <li>1-佛挡杀佛</li>
+        <li>1-威尔而</li>
+        <li>是的发生</li>
+        <li>1-太容易太容易</li>
+        <li>截个图</li>
+      </ul>
+    </div> -->
+      <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js" charset="utf-8"></script>
+      <script type="text/javascript">
+        var obj={};
+        var obj1 = {
+          name: 'harrisking',
+          age: '23',
+          sex: 'man',
+          friend:[1,2,3]
+        };
+        $.extend(obj,obj1);
+        console.log(obj);
+        //
+        // var obj1 = {
+        //   name: 'harrisking',
+        //   age: '23',
+        //   sex: 'man',
+        //   friend:{
+        //     'a':1000,
+        //     'b':200,
+        //     'c':300
+        //   }
+        // };
+        // $.extend(obj,obj1);
+        // console.log(obj);//
+
+      // var obj2 = {
+      //   name: 'hargirl',
+      //   sex: 'women'
+      // };
+      //
+      // $.extend(obj,obj1);
+      // function getMessage(obj){
+      //   var defult = {
+      //     name: '佚名',
+      //     age: '未知',
+      //     sex: '中性'
+      //   }
+      //   var ops = {};
+      //   $.extend(ops,defult,obj);
+      //   console.log(ops);
+      // }
+      // getMessage();
+
+
+
+      // var $ctLis = $('.unit li');
+      // for(var i=0; i<$ctLis.length; i++){
+      //   var $node = $ctLis.eq(i);
+      //   if($node.text().indexOf('1-') > -1){
+      //     $node.addClass('active');
+      //   }
+      // }
+
+
+      // $('.unit li').each(function(index){
+      //   console.log( index + ':' + $(this).text())
+      // })
+
+
+      // var $ctLis = $('.unit li');
+      // $ctLis.each(function(index){
+      //   var $node = $ctLis.eq(index);
+      //   if($node.text().indexOf('1-')>-1){
+      //     $node.addClass('active');
+      //   }
+      // })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>新闻加载example</title>
+        <style media="screen">
+          .newsFrame{
+            margin: 0 auto;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="newsFrame">
+          <ul class="content">
+            <li>在北大听讲座</li>
+            <li>统计陷阱</li>
+            <li>浅薄</li>
+          </ul>
+          <button class="btn">换一批</button>
+        </div>
+
+
+         <script type="text/javascript">
+            $('.btn').addEventListener('click',function(){
+
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.open('get','http://b.har.com:8080/getNews',true);
+              xmlhttp.send();
+
+              xmlhttp.onreadystatechange = function(){
+                if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                  appendhtml(JSON.parse(xmlhttp.responseText));
+                }
+              }
+
+
+            })
+
+          function appendhtml(news){
+            var html = '';
+            for(var i=0; i<news.length; i++){
+              html += '<li>' + news[i] + '</li>'
+            }
+            console.log(html)
+          $('.content').innerHTML = html
+          }
+
+          function $(id){
+            return document.querySelector(id)
+          }
+
+        </script>
+      </body>
+    </html>

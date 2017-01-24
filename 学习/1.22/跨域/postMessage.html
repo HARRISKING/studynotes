@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>降域test</title>
+        <style media="screen">
+          .main{
+            border: 1px solid #ccc;
+            width:500px;
+            height: 500px;
+            display: inline-block;
+            position: absolute;
+            top:10px;
+            left:10px;
+          }
+          iframe{
+            border: 1px dashed #ccc;
+            width:500px;
+            height:500px;
+            margin-left: 100px;
+            position: absolute;
+            top:10px;
+            left:450px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="ct">
+          <div class="main">
+            <h1>使用postMessage来实现跨域</h1>
+            <input type="text" class="content" placeholder="http://a.har.com:8080">
+          </div>
+          <iframe src="http://b.har.com:8080/postMessage2.html" frameborder="0"></iframe>
+        </div>
+        <script type="text/javascript">
+          document.querySelector('.main input').addEventListener('input',function(){
+            console.log(this.value);
+            window.frames[0].postMessage(this.value,'*');
+          })
+          window.addEventListener('message',function(e){
+            document.querySelector('.main input').value = e.data;
+          })
+        </script>
+      </body>
+    </html>
