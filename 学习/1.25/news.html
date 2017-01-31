@@ -1,0 +1,124 @@
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>新闻懒加载</title>
+        <style media="screen">
+          li,a,img,h4{
+            margin: 0;
+            padding: 0;
+          }
+          .ct li{
+            list-style: none;
+          }
+          .ct .link-box>img{
+            border: 1px solid #ccc;
+            width:40px;
+            height: 40px;
+            float: left;
+          }
+          .ct .link-box:after{
+            content: "";
+            display: block;
+            clear: both;
+          }
+          .ct .link-box h4{
+            display: inline-block;
+            float: left;
+            margin-left: 10px;
+          }
+          .ct .link-box p{
+            display: inline-block;
+            float: left;
+            margin-left: -65px;
+            margin-top: 23px;
+            color:#bbb;
+          }
+          .ct .link-box{
+            cursor: pointer;
+          }
+          .ct .link-box :active{
+            background-color: red;
+            color: white;
+          }
+          .box{
+            border: 1px solid #ccc;
+            max-width: 500px;
+            margin: 0 auto;
+          }
+          .btn{
+            border: 1px solid #ccc;
+            display: inline-block;
+            width:80px;
+            height: 25px;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 25px;
+            margin-bottom: 30px;
+            cursor: pointer;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="box">
+          <ul class="ct">
+            <li>
+              <a class="link-box">
+                <img src="" alt="加载失败了">
+                <h4>中国轰六</h4>
+                <p>中国轰六中国轰六中国轰六中国轰六中国轰六</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn">加载更多</a>
+        <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+        <script type="text/javascript">
+        var pageIndex=0;
+          $('.btn').on('click',function(){
+            $.ajax({
+                url: "router.js",
+                method: "get",
+                data:{
+                  page: pageIndex,
+                }
+            }).done(function(retNews){
+              if(retNews.status === 0){
+                appendHTML(retNews.data);
+                pageIndex++;
+              }else{
+                console.log('获取新闻出错')
+              }
+            }).fail(function(){
+              console.log("error")
+            })
+
+
+          });
+          function appendHTML(news){
+            var html = '';
+            $.each(news,function(){
+              html += '<li><a href="' + news.link +  '" class="link-box">';
+              html += '<img src="' + news.img + '" alt="加载失败了">';
+              html += '<h4>' + news.title + '</h4>';
+              html += '<p>' + news.brif + '</p>';
+              html += '</a> </li>';
+             })
+             $('.ct').append(html);
+
+          };
+
+          function isShow($node){
+            var scrollTop = $(window).scrollTop(),
+                windowHeight = $(window).height(),
+                offsetTop = $node.offset().top,
+                nodeHeight = $node.outerHeight(true);
+            if(scrollTop + windowHeight > offsetTop && scrollTop < offsetTop + nodeHeight){
+              return true;
+            }else{
+              return false;
+            }
+          };
+        </script>
+      </body>
+    </html>
