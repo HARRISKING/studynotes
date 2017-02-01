@@ -57,6 +57,10 @@
             margin-bottom: 30px;
             cursor: pointer;
           }
+          .btn:hover{
+            background-color: red;
+            color:white;
+          }
         </style>
       </head>
       <body>
@@ -77,7 +81,7 @@
         var pageIndex=0;
           $('.btn').on('click',function(){
             $.ajax({
-                url: "router.js",
+                url: "/getNews",
                 method: "get",
                 data:{
                   page: pageIndex,
@@ -92,16 +96,14 @@
             }).fail(function(){
               console.log("error")
             })
-
-
           });
           function appendHTML(news){
             var html = '';
             $.each(news,function(){
-              html += '<li><a href="' + news.link +  '" class="link-box">';
-              html += '<img src="' + news.img + '" alt="加载失败了">';
-              html += '<h4>' + news.title + '</h4>';
-              html += '<p>' + news.brif + '</p>';
+              html += '<li><a href="' + this.link +  '" class="link-box">';
+              html += '<img src="' + this.img + '" alt="加载失败了">';
+              html += '<h4>' + this.title + '</h4>';
+              html += '<p>' + this.brif + '</p>';   //使用this，而不是news！
               html += '</a> </li>';
              })
              $('.ct').append(html);

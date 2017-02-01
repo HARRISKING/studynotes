@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>轮播</title>
+    <style media="screen">
+      img,li,a,ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .carousel{
+        position: relative;
+        width:300px;
+        height:150px;
+      }
+      .carousel .box img{
+        border: 1px solid #ccc;
+        width:300px;
+        height:150px;
+        /*display: none;*/
+      }
+      /*.carousel .box img .active{
+        display: block;
+      }*/
+      .advance{
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+      }
+      .btn{
+        border: 1px solid #ccc;
+        background: #555;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .retreat{
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        right: 0px;
+
+      }
+
+      .bullet>li{
+        width: 20px;
+        height:5px;
+        display: inline-block;
+        border-radius: 5px;
+        background: white;
+      }
+
+      .bullet{
+        position: absolute;
+        left: 50%;
+        margin-left: -52px;
+        top:125px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <ul class="box">
+        <li><a href=""><img src="http://imgsrc.baidu.com/forum/pic/item/4ed91e178a82b9012a3fd5ed738da9773812ef07.jpg" alt=""></a></li>
+        <li><a href=""><img src="http://i2.hdslb.com/video/22/2246b5911dc4107e57a06704f1150231.jpg" alt=""></a></li>
+        <li><a href=""><img src="http://www.feizl.com/upload2007/2015_04/15040711151602.jpg" alt=""></a></li>
+        <li><a href=""><img src="http://game.ahgame.com/uploads/allimg/160107/0914411F3-2.jpg" alt=""></a></li>
+      </ul>
+
+      <div class="btn advance">&lt;</div>
+      <div class="btn retreat">&gt;</div>
+
+
+        <ul class="bullet">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+    <script>
+      $('.retreat').on('click',function(){
+        $('.active').next().addClass('active');
+        var lastOne = $('.active').firstChild.addClass('active');
+
+      })
+    </script>
+  </body>
+</html>
