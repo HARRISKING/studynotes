@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>轮播</title>
+    <title>淡入淡出轮播</title>
     <style media="screen">
       img,li,a,ul{
         margin: 0;
@@ -24,16 +24,13 @@
         width:300px;
         height:150px;
         float: left;
-        /*display: none;*/
       }
       .box:after{
         content: "";
         display: block;
         clear: both;
       }
-      /*.carousel .box img .active{
-        display: block;
-      }*/
+
       .btn{
         border: 1px solid #ccc;
         background: #555;
@@ -66,10 +63,6 @@
         cursor: pointer;
       }
       .bullet{
-        /*position: absolute;
-        left: 50%;
-        margin-left: -52px;
-        top:125px;*/
         display: inline-block;
       }
       .bullet-ct{
@@ -107,84 +100,66 @@
     <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
     <script>
       $(function(){
-
-        var $btnPre = $('.advance'),
-            $btnNext = $('.retreat'),
-            $bulletCt = $('.bullet-ct'),
+        var $btnNext = $('.retreat'),
+            $btnPre = $('.advance'),
             $bullet = $('.bullet'),
-            $box = $('.box');
+            $box = $('.box'),
+            $imgCount = $box.children().size(),
+            curIdx = 0,
+            $boxItems = $box.children();
 
-        var isClick = false;  //加锁
-
-        var dataIndex = 0; //第几张图片
-        var pageLength=$box.children().length;  //没有克隆之前的图片数量
-
-        var $firstImg = $box.find('img').first(),
-            $lastImg = $box.find('img').last();
-
-        $box.prepend($lastImg.clone())
-        $box.append($firstImg.clone())
-        $box.width($firstImg.width() * $box.children().length)//每次增加图片不必更改css
-        $box.css('left','-300px') //让图片原始位置为第一张图片
-
-
+        var isAnimate = false; //状态锁
         $btnNext.on('click',function(){
-          playNext(1);
-        });
-
+          nextPlay();
+        })
         $btnPre.on('click',function(){
-          playPre(1);
-        });
+          prePlay();
+        })
+        $bullet.find('li').on('click',function(){
+          var idxs = $(this).index();
+          play(idxs);
+        })
 
-        function playNext(n){
-          if(isClick) return;
-          isClick = true;
-          $box.animate({
-            left: '-='+$firstImg.width()*n,
-          },function(){
-            dataIndex+=n;
-            console.log(dataIndex)
 
-            if(dataIndex === pageLength){
-              $box.css({'left':'-300px'});
-              dataIndex = 0;
-            }
-            isClick = false;
-            setBullet();
+        function setBullet(){
+          $bullet.children().removeClass('active').eq(curIdx).addClass('active');
+        };
+        play(0);
+        autoPlay();
 
-          })
+
+
+        function nextPlay(){
+          play((curIdx+1) % $imgCount)
+        };
+        function prePlay(){
+          play(($imgCount+curIdx-1) % $imgCount)
+        };
+        function play(idx){
+          if(isAnimate) return;
+          isAnimate = true;
+          $boxItems.eq(curIdx).fadeOut(500);
+          $boxItems.eq(idx).fadeIn(500,function(){
+            isAnimate = false;
+          });
+          curIdx = idx;
+          setBullet();
         };
 
-        function playPre(n){
-
-          if(isClick) return;
-          isClick = true;
-
-          $box.animate({
-            left:'+='+$firstImg.width()*n,
-          },function(){
-            dataIndex-=n;
-            console.log(dataIndex)
-            if(dataIndex < 0){
-              $box.css('left', 0-(pageLength * $firstImg.width()));
-              dataIndex = pageLength-1;
-            }
-            isClick = false;
-            setBullet();
-          })
+        function autoPlay(){
+          clock = setInterval(function(){
+            nextPlay();
+          },2000);
         }
-        function setBullet(){
-          $bullet.children().removeClass('active').eq(dataIndex).addClass('active');
-        }
-        $bullet.find('li').on('click',function(){
-          var idx = $(this).index();
-          if(dataIndex<idx){
-            playNext(idx-dataIndex);
-          }else{
-            playPre(dataIndex-idx)
-          }
-        })
+
+        function stopAuto(){
+  				clearInterval(clock);
+  			};
+
       });
+
+
+
     </script>
   </body>
 </html>
