@@ -1,0 +1,82 @@
+    <script type="text/javascript">
+
+    // //方法一：
+    //   var people = {
+    //     name: 'harrisking',
+    //     age: '23',
+    //     sayHello: function(){
+    //       console.log('hello, ',this.name);
+    //     }
+    //   }
+    // //方法二：
+    //   function getPeople(name,age){
+    //     var p = {
+    //       name: name,
+    //       age: age,
+    //       sayHello: function(){
+    //         console.log('hello,'this.name);
+    //       }
+    //     }
+    //     return p;
+    //   }
+    //   var p1 = getPeople('harrsiking','23');
+    //   var p2 = getPeople('jrg','100');
+    //
+    //
+    //方法三：
+      // function People(name,age){
+      //   this.name = name;
+      //   this.age = age;
+      //   this.sayHello = function(){
+      //     console.log('hello,'+this.name);
+      //   }
+      // }
+      // People('harrisking','23');
+      // new People('bob','22');
+      //
+      // var p1 = new People('harrisking','23');
+      // var p2 = new People('jrg','100');
+
+
+      // function Person(name,sex){
+      //   this.name = name;
+      //   this.sex = sex;
+      //   Person.prototype.sayHello = function(){
+      //     console.log('hello,'+this.name);
+      //   }
+      // };
+      //
+      // var p1 = new Person('harrsking','23');
+      // console.log(p1);
+      // p1.sayHello();
+
+      // function cars(name,color,status){
+      //   this.name = name;
+      //   this.color = color;
+      //   this.status = status;
+      //   cars.prototype.run = function(){
+      //     console.log('run');
+      //   };
+      //   cars.prototype.stop = function(){
+      //     console.log('stop');
+      //   };
+      //   cars.prototype.getStatus = function(){
+      //     console.log(this.status);
+      //   };
+      // }
+      // var car = new cars('golf','black','run');
+
+      function GoTop(ct){
+        this.ct = $(ct);
+        this.target = target;
+        GoTop.prototype.bindEvent = function(){
+          
+        };
+        GoTop.prototype.createNode = function(){
+
+        }
+      }
+
+
+
+    </script>
