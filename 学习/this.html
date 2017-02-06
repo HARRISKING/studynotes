@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this</title>
+  </head>
+  <body>
+
+    <button class="btn">点我</button>
+
+
+
+    <script type="text/javascript">
+
+
+      // function fn(){
+      //   console.log(this);
+      // };
+      //
+      // fn();
+
+      // fn.call(undefined)//this为window
+
+
+
+
+    // var app = {
+    //   init: function(){
+    //     this.target = document.querySelector('.btn');
+    //     this.bind();
+    //   },
+    //   bind: function(){
+    //     var _this = this
+    //     this.target.addEventListener('click',function(){
+    //       _this.sayHello();
+    //       // console.log(_this)
+    //     })
+    //   },
+    //   sayHello: function(){
+    //     console.log('hello...')
+    //   }
+    //
+    // };
+    // // app.init();
+    // app.init.call(app);
+
+    // document.addEventListener('click', function(e){
+    //     console.log(this);
+    //     setTimeout(function(){
+    //         console.log(this);
+    //     }, 200);
+    // }, false);
+      // var obj1 = {
+      // name: 'Byron',
+      // fn : function(){
+      //     console.log(this);
+      // }
+      // };
+      //
+      // obj1.fn();
+      // var fn2 = boj1.fn();
+      // fn2();
+
+      // function fn0(){
+      //   console.log(this)
+      //   function fn1(){
+      //     this.abc = 1;
+      //     console.log(this)
+      //   }
+      //   fn1();
+      // }
+      // fn0();
+      // var ha = new fn0();
+
+      var func = function(name){
+        this.name = name;
+
+      }
+      var p1 = new func();
+
+
+      function isProtoType(obj,fn){
+        var oldProto = obj.__proto__;
+
+        do{
+          if(oldProto === fn.protoType){
+            return true;
+          }else{
+            oldProto = oldProto.__proto__;
+          }
+        }while(oldProto)
+          return false;
+      }
+
+
+
+    </script>
+  </body>
+</html>
