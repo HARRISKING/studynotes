@@ -1,0 +1,263 @@
+<script type="text/javascript">
+
+
+
+      String.prototype.getMostOften = function(){
+        var obj = {};
+        for(var i=0; i<this.length; i++){
+          var k = this[i];
+          if(obj[k]){
+            obj[k]++;
+          }else{
+            obj[k] = 1;
+          }
+        }
+      console.log(obj);
+
+      var num = 0;
+      var word = '';
+
+      for(var key in obj){
+        if(obj[key] > num){
+          num = obj[key];
+          word = key;
+        }
+      }
+      return '因为' + word + ' 出现了' + num + '次'
+      }
+      var str = 'ahbbccdeddddfg';
+      var ch = str.getMostOften();
+      console.log(ch); //d , 因为d 出现了5次
+
+
+      //
+      // String.prototype.getMostOften = function() {
+      //      var obj = {};
+      //      for (var i = 0; i < this.length; i++) {
+      //        if(!obj[this[i]]) {
+      //          obj[this.charAt(i)] = 1;
+      //        }else if(obj[this[i]]) {
+      //          obj[this.charAt(i)]++;
+      //        }
+      //      }
+      //      console.log(obj);
+      //
+      //      var val = '';
+      //      var num = 0;
+      //      for(var key in obj) {
+      //        if (obj[key] > num) {
+      //          num = obj[key];
+      //          val = key
+      //        }
+      //      }
+      //
+      //      return (val,'因为'+val+'出现了'+num+'次');
+      //    };
+      // var str = 'ahbbccdeddddfg';
+      // var ch = str.getMostOften();
+      // console.log(ch); //d , 因为d 出现了5次
+      //
+      //
+      //
+      //
+      //
+      //
+      // String.prototype.getMostOften = function(){
+      //     var obj = {};
+      //     for(var i=0,k;i<this.length;i++){
+      //         k = this[i];
+      //         if(obj[k]){
+      //             obj[k]++
+      //         }else{
+      //             obj[k] = 1
+      //         }
+      //     }
+      //
+      //     var max = 0,key;
+      //     for(var k in obj){
+      //         if(obj[k]>max){
+      //            max = obj[k];
+      //            key = k;
+      //         }
+      //      }
+      //
+      //     return key;
+      // }
+      // var str = 'ahbbccdeddddfg';
+      // var ch = str.getMostOften();
+      // console.log(ch); //d
+
+
+
+
+
+
+
+
+
+      // function Person(name, sex){
+      //   this.name = name;
+      //   this.sex = sex;
+      // }
+      //
+      // Person.prototype.getName = function(){
+      // console.log(this.name);
+      // };
+      //
+      // function Male(name, sex, age){
+      //   this.age = age;
+      //   Person.call(this,name,sex);
+      // }
+      //
+      // inherit(Person,Male);
+      // Male.prototype.getAge = function(){
+      //   console.log(this.age)
+      // };
+      // Male.prototype.printName = function(){
+      //   console.log(this.name);
+      // }
+      //
+      // var ruoyu = new Male('若愚', '男', 27);
+      // ruoyu.printName();
+      //
+      //
+      // function inherit(superType,subType){
+      //   var _prototype = Object.create(superType.prototype);
+      //   _prototype.constructor = subType;
+      //   subType.prototype = _prototype;
+      // }
+
+
+
+
+
+
+
+
+
+    // function Person(name, sex){
+    // this.name = name;
+    // this.sex = sex;
+    // }
+    //
+    // Person.prototype.printName = function(){
+    // console.log(this.name);
+    // };
+    //
+    // function Male(name,age,sex){
+    // this.age = age;
+    // Person.call(this,name,sex);
+    // //这句就可以继承Person中的属性，其中，this指的是new的m;
+    // }
+    // Male.prototype = Object.create(Person.prototype)
+    // //这句话可以继承person中的方法
+    // Male.prototype.printAge = function(){
+    // console.log(this.age);
+    // };
+    // var m = new Male('har','23','男')
+    //
+    // m.hasOwnProperty('name');
+    // m.hasOwnProperty('age');
+    // m.hasOwnProperty('sex');
+
+
+    // function getMostOften(string){
+    //   var array = [];
+    //   for(i=0,j=0,k=0; i<string.length,j<string.length; i++){
+    //     if(string[j]==string[i]){
+    //       k++;
+    //       j++;
+    //       console.log(k)
+    //     }else{
+    //       k = 1;
+    //
+    //
+    //     }
+    //
+    //   }
+    // }
+  //   String.prototype.getMostOften = function() {
+  //    var obj = {};
+  //    for (var i = 0; i < this.length; i++) {
+  //      if(!obj[this[i]]) {
+  //        obj[this.charAt(i)] = 1;
+  //      }else if(obj[this[i]]) {
+  //        obj[this.charAt(i)]++;
+  //      }
+  //    }
+  //    console.log(obj);
+  //    var val = '';
+  //    var num = 0;
+  //    for(var key in obj) {
+  //      if (obj[key] > num) {
+  //        num = obj[key];
+  //        val = key
+  //      }
+  //    }
+   //
+  //    return (val,'因为'+val+'出现了'+num+'次');
+  //  };
+// var str = 'ahbbccdeddddfg';
+// var ch = str.getMostOften();
+// console.log(ch); //d , 因为d 出现了5次
+
+
+    // var str = 'ahbbccdeddddfg';
+    // getMostOften(str);
+    // var ch = str.getMostOften();
+    // console.log(ch); //d , 因为d 出现了5次
+
+
+
+
+
+
+// var str = 'ahbbccdeddddfg';
+//   function getMostOften(strData){
+//     var obj = {};
+//     for(var i=0,k;i<strData.length;i++){
+//       k = strData[i];
+//       if(obj[k]){
+//         k++
+//       }else{
+//         obj[k]
+//       }
+//   }
+//   getMostOften(str);
+//
+//
+//   // var ch = str.getMostOften();
+//   // console.log(ch); //d , 因为d 出现了5次
+
+
+
+
+
+
+
+    // function Person(name){
+    //   this.name = name;
+    //   Person.prototype.sayName = function(){
+    //     console.log('你好，'+ this.name);
+    //   }
+    // }
+    // var p = new Person('har');
+    // console.log(p);
+    // console.log(p.sayName);
+    //
+    //
+    // function isInstanceOf(obj,fn){
+    //   var oldProto = obj.__proto__;
+    //   do{
+    //     if(oldProto === fn.prototype){
+    //       return true;
+    //     }else{
+    //       oldProto = oldProto.__proto__;
+    //     }
+    //   }while(oldProto){
+    //     return false;
+    //   }
+    // }
+
+
+</script>
