@@ -6,49 +6,49 @@
   </head>
   <body>
     <script>
-// 实验基本类型和引用类型的区别：
-//       function modifyObj(obj){
-//         obj.age= 100;
-//       }
-//       var obj1 = {
-//         name: 'hunger',
-//         age:10
-//       };
-//       modifyObj(obj1);
-//       console.log(obj1);
-//       function add(num){
-//         num += 10;
-//         return num;
-//       }
-//       var count = 20;
-//       var result = add(count);
-//       console.log(count);
-//       console.log(result);
-//
-//
-//
-//
-// 调用改变原来数组方法：
-//       var arr = [1,2,34,5,66];
-//       function square(data){
-//         for(var i=0; i<data.length; i++ ){
-//           data[i]=data[i] * data[i];
-//         }
-//         return data;
-//       }
+实验基本类型和引用类型的区别：
+      function modifyObj(obj){
+        obj.age= 100;
+      }
+      var obj1 = {
+        name: 'hunger',
+        age:10
+      };
+      modifyObj(obj1);
+      console.log(obj1);
+      function add(num){
+        num += 10;
+        return num;
+      }
+      var count = 20;
+      var result = add(count);
+      console.log(count);
+      console.log(result);
 
 
-// 调用不改变原来数组方法：
-      // var arr = [1,2,34,5,66];
-      // function square(data){
-      //   var arr2 = [];
-      //   for(var i=0;i<data.length;i++){
-      //     arr2[i]=arr[i]*arr[i];
-      //   }
-      //   return arr2;
-      // }
 
-// for in循环：
+
+调用改变原来数组方法：
+      var arr = [1,2,34,5,66];
+      function square(data){
+        for(var i=0; i<data.length; i++ ){
+          data[i]=data[i] * data[i];
+        }
+        return data;
+      }
+
+
+调用不改变原来数组方法：
+      var arr = [1,2,34,5,66];
+      function square(data){
+        var arr2 = [];
+        for(var i=0;i<data.length;i++){
+          arr2[i]=arr[i]*arr[i];
+        }
+        return arr2;
+      }
+
+//for in循环：
     var obj={
       name:"har";
       age:"34";
