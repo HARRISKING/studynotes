@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>小程序题目</title>
+    <style media="screen">
+    ul,li{
+      margin: 0;
+      padding: 0;
+    }
+      .box li{
+        border: 2px solid blue;
+        list-style: none;
+        width:50px;
+        height: 50px;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        margin-left: -2px;
+        margin-top:  -2px;
+        position: relative;
+        color: green;
+      }
+      .box li.active{
+        border: 2px solid red;
+        z-index: 10;
+      }
+      #ct{
+        width: 156px;
+        height: 156px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ct">
+      <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+      </ul>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $('.box li').on('mouseover',function(){
+        $('.box li').removeClass('active');
+        $(this).addClass('active');
+      })
+      $('.box li').on('mouseleave',function(){
+        $('.box li').removeClass('active');
+      })
+    </script>
+  </body>
+</html>
