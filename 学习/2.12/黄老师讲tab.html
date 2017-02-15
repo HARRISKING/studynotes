@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tab测试</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		#root{
+			margin:auto;
+			background:yellow;
+			width:300px;
+		}
+		.clear-fix:after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+		.tab-container {
+			border-bottom:1px solid red;
+		}
+		.tab-item{
+			padding:20px;
+			float:left;
+			cursor:pointer;
+		}
+		.active{
+			color:red;
+			border-left:1px solid green;
+			border-right:1px solid green;
+			border-top:1px solid green;
+			    position: relative;
+    bottom: -1px;
+    background: white;
+
+		}
+	</style>
+</head>
+<body>
+	<!-- 用来tab组件 -->
+	<div id="root"></div>
+	<script type="text/javascript">
+		// 数据模型
+		var baseConfig = {
+			tabList:[
+				{
+					tabname:"tab1",
+					tabContent:"渲染tab1"
+				},
+				{
+					tabname:"tab2",
+					tabContent:"渲染tab2"
+				},
+				{
+					tabname:"tab3",
+					tabContent:"渲染tab3"
+				}
+			],
+			indexTab:1
+		};
+		var TabFactory = function(tabConfig) {
+			this.tabConfig = Object.assign({},baseConfig,tabConfig);
+			//高亮的是哪一个
+			this.activeIndex = this.tabConfig.indexTab
+		};
+		// 渲染
+		TabFactory.prototype.render=function(container){
+			var tabList = this.tabConfig['tabList']
+			//渲染头部
+			var headerHtml = tabList.map(function(tab){
+				var tabname  = tab.tabname;
+				return [
+				'<div class="tab-item">',
+				tabname,
+				'</div>'].join('')
+			}).join('');
+			var bodyHtml = '<div class="tab-body"></div>';
+			var finalHtml =[
+				'<div class="tab-container clear-fix">',
+				headerHtml,
+				'</div>',
+				bodyHtml
+			].join('') ;
+			//渲染内容区
+			container.innerHTML = finalHtml;
+			//处理首屏渲染
+			this.renderStyle(this.activeIndex);
+			//挂载事件
+			this.addEvent();
+		}
+		TabFactory.prototype.renderStyle=function(index,boolean){
+				var tabDomList = document.querySelectorAll('.tab-item');
+				var tabBodyContainter = document.querySelectorAll('.tab-body')[0];
+				var tabItem = tabDomList[index];
+				//去掉之前的高亮
+				tabDomList[this.activeIndex].classList.remove('active');
+				//增加active
+				tabItem.classList.add('active');
+				debugger;
+				tabBodyContainter.innerHTML = this.tabConfig.tabList[index].tabContent;
+		}
+		//挂载事件
+		TabFactory.prototype.addEvent=function(){
+			var that = this;
+			var tabDomList = document.querySelectorAll('.tab-item');
+			// 将类数组的对象转换成数组
+			[].slice.call(tabDomList).forEach(function(tabItem,index){
+				tabItem.addEventListener('click',function(){
+					if(index == that.activeIndex){
+						return
+					};
+					that.renderStyle(index);
+					//重新复制active
+					that.activeIndex = index
+				})
+			})
+		}
+		var container = document.getElementById('root');
+		var tabInstance = new TabFactory({});
+		tabInstance.render(container)
+	</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>lazyload图片懒加载</title>
+	<style>
+    ul,li{
+      list-style:none;
+    }
+    .container{
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .container:after{
+    	content: '';
+    	display: block;
+    	clear: both;
+    }
+    .container li{
+      float: left;
+      margin: 10px 10px;
+    }
+    .container li img{
+      width: 380px;
+      height: 380px;
+    }
+    p{
+      float: left;
+    }
+  </style>
+</head>
+<body>
+	<ul class="container"></ul>
+	<script type="text/javascript">
+		//创建[0,1,2...15];
+		var range_16=Array.from(Array(16).keys());
+		var imgPlaceholder = "http://kejian.jirengu.com/data/fe/%E8%AF%BE%E4%BB%B6/32-%E6%87%92%E5%8A%A0%E8%BD%BD/code/blank.jpg";
+		var imgListDOM = range_16.map(function (value,index) {
+			return ['<li>',
+					'<img data-src="http://cdn.jirengu.com/book.jirengu.com/img/'+(value+1)+'.jpg"',
+					' src="'+imgPlaceholder+'"/>',
+					'</li>'
+					].join('');
+		});
+		var containerDom = document.querySelectorAll('.container')[0];
+		containerDom.innerHTML= imgListDOM.join('');
+		//主逻辑
+		var LazyLoad = function(targetDom){
+			this.node = targetDom;
+			//首屏检查
+			this.check();
+			//添加滚动监听
+			this.addScrollEvent();
+		};
+		LazyLoad.prototype.check = function(){
+			var windowHeight = screen.availHeight;
+			var scrollTop = document.body.scrollTop;
+			var offsetTop = this.node.offsetTop;
+      		var nodeHeight = this.node.offsetHeight;
+			if(windowHeight + scrollTop > offsetTop && scrollTop < offsetTop + nodeHeight){
+				this.triggerLoad();
+			}
+		}
+		//添加滚动监听
+		LazyLoad.prototype.addScrollEvent = function(){
+			var that = this;
+			window.addEventListener('scroll', function(e) {
+		  		that.check();
+			});
+		}
+		//触发加载
+		LazyLoad.prototype.triggerLoad= function(){
+			var imgNode = this.node.querySelectorAll('img')[0];
+			var imgUrl = imgNode.getAttribute('data-src');
+			imgNode.setAttribute('src', imgUrl);
+		};
+		//初始化
+		var init =function(container){
+			[].slice.call(container.children).forEach(function(childDOM){
+				new LazyLoad(childDOM);
+			})
+		}
+		init(containerDom);
+	</script>
+</body>
+</html> -->
